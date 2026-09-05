@@ -195,6 +195,10 @@
     box-shadow: 0 1px 2px rgba(20,18,26,0.03), 0 12px 32px rgba(20,18,26,0.05);
   }
 
+  .product-card + .product-card {
+    margin-top: 1.25rem;
+  }
+
   .product-badge {
     display: inline-block;
     font-family: var(--font-mono);
@@ -282,8 +286,11 @@
 <body>
 
   <header>
-<a class="brand" href="#">
-      <img class="brand-mark" src="assets/perimity-mark-v2.png" alt="" width="28" height="28">
+    <a class="brand" href="#">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="17" stroke="#6731a3" stroke-width="2.5"/>
+        <path d="M9 21 L15 21 L18 13 L22 27 L25 21 L31 21" stroke="#6731a3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
       <span class="brand-name">Perimity</span>
     </a>
     <nav>
@@ -329,6 +336,19 @@
         </p>
       </div>
       <a class="cta" href="https://pulse.perimity.io" target="_blank" rel="noopener">Try the live demo →</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-copy">
+        <span class="product-badge">Also from Perimity</span>
+        <h2>Subjectivity Tracker</h2>
+        <p>
+          A simple tracker for carrier subjectivities, built specifically around cyber
+          submissions — what's open, overdue, or cleared, with automated reminders so
+          nothing slips through email threads.
+        </p>
+      </div>
+      <a class="cta" href="https://tracker.perimity.io" target="_blank" rel="noopener">Try it now →</a>
     </div>
   </section>
 
