@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subjectivity Tracker by Perimity: every open subjectivity in one clean list</title>
+<meta name="description" content="Subjectivity Tracker is built for cyber brokers. Track what each carrier is waiting on, per submission, and get reminded before anything slips past bind.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Brand tokens, taken from the Pulse site. */
+  :root {
+    --paper: #faf9fc;
+    --surface: #ffffff;
+    --ink: #14121a;
+    --slate: #5b5566;
+    --line: #e4e0ea;
+    --accent: #6731a3;
+    --accent-dark: #552787;
+    --wash: #f1ecf7;
+    --open-bg: #FDF3DC;    --open-fg: #8A5A00;
+    --sent-bg: #f1ecf7;    --sent-fg: #6731a3;
+    --clear-bg: #e3f5ea;   --clear-fg: #1c7a49;
+    --font-display: "Fraunces", Georgia, serif;
+    --font: "IBM Plex Sans", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+  a:focus-visible, .btn:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  .skip {
+    position: absolute; left: -9999px; top: 0;
+    background: var(--ink); color: #fff; padding: 10px 16px;
+  }
+  .skip:focus { left: 12px; top: 12px; z-index: 10; }
+
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 13px 22px;
+    border-radius: 8px;
+    line-height: 1.2;
+  }
+  .btn:hover { background: var(--accent-dark); }
+  .btn-small { padding: 9px 16px; font-size: 0.95rem; }
+  .text-link { font-weight: 600; text-underline-offset: 4px; }
+
+  /* Header */
+  .site-header { border-bottom: 1px solid var(--line); background: var(--surface); }
+  .site-header .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; padding-top: 14px; padding-bottom: 14px;
+  }
+  .brand {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none; font-weight: 700;
+  }
+  .brand img { display: block; }
+  .brand span { color: var(--slate); font-weight: 500; }
+  .site-nav { display: flex; align-items: center; gap: 26px; }
+  .site-nav a.nav-link { text-decoration: none; color: var(--slate); font-weight: 500; font-size: 0.95rem; }
+  .site-nav a.nav-link:hover { color: var(--ink); }
+
+  /* Hero */
+  .hero { padding: 72px 0 80px; }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: 56px;
+    align-items: center;
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.3rem, 5vw, 3.5rem);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    font-weight: 600;
+    margin: 0 0 20px;
+  }
+  .lede { font-size: 1.2rem; color: var(--slate); margin: 0 0 30px; max-width: 34em; }
+  .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; }
+
+  /* Product list in the hero */
+  .tracker {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: 0 18px 40px -24px rgba(20, 18, 26, 0.35);
+    overflow: hidden;
+  }
+  .tracker-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 12px; padding: 18px 20px; border-bottom: 1px solid var(--line);
+  }
+  .tracker-head strong { font-size: 1.05rem; }
+  .tracker-head span { color: var(--slate); font-size: 0.9rem; white-space: nowrap; }
+  .tracker ul { list-style: none; margin: 0; padding: 0; }
+  .tracker li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 14px; align-items: center;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.97rem;
+  }
+  .tracker li:last-child { border-bottom: 0; }
+  .tracker .due { color: var(--slate); font-size: 0.88rem; white-space: nowrap; }
+  .pill {
+    font-size: 0.8rem; font-weight: 600;
+    padding: 4px 10px; border-radius: 999px; white-space: nowrap;
+  }
+  .pill.open { background: var(--open-bg); color: var(--open-fg); }
+  .pill.sent { background: var(--sent-bg); color: var(--sent-fg); }
+  .pill.clear { background: var(--clear-bg); color: var(--clear-fg); }
+  .tracker-foot {
+    padding: 12px 20px; background: var(--paper);
+    color: var(--slate); font-size: 0.88rem;
+    border-top: 1px solid var(--line);
+  }
+
+  /* Sections */
+  .section { padding: 76px 0; border-top: 1px solid var(--line); }
+  .section.alt { background: var(--surface); }
+  h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.7rem, 3.2vw, 2.3rem);
+    line-height: 1.18; letter-spacing: -0.01em;
+    margin: 0 0 36px; max-width: 22em;
+  }
+  h3 { font-size: 1.15rem; margin: 0 0 6px; }
+  p { margin: 0; }
+
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .compare > div { padding: 26px 28px; border-radius: 12px; border: 1px solid var(--line); }
+  .compare .before { background: var(--wash); color: var(--slate); }
+  .compare .after { background: var(--ink); color: #e9e5f0; border-color: var(--ink); }
+  .compare h3 { color: var(--ink); }
+  .compare .after h3 { color: #fff; }
+
+  .features { margin: 0; }
+  .features > div {
+    display: grid; grid-template-columns: 240px minmax(0, 1fr);
+    gap: 24px; padding: 22px 0; border-top: 1px solid var(--line);
+  }
+  .features > div:last-child { border-bottom: 1px solid var(--line); }
+  .features dt { font-weight: 700; font-size: 1.1rem; }
+  .features dd { margin: 0; color: var(--slate); max-width: 38em; }
+
+  .steps {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+    counter-reset: step;
+  }
+  .steps li { counter-increment: step; }
+  .steps li::before {
+    content: counter(step);
+    display: grid; place-items: center;
+    width: 38px; height: 38px; border-radius: 50%;
+    background: var(--accent); color: #fff; font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .steps p { color: var(--slate); }
+
+  .pricing { text-align: center; }
+  .pricing h2 { margin: 0 auto 12px; }
+  .pricing .price {
+    font-size: clamp(3rem, 8vw, 4.6rem);
+    font-family: var(--font-display);
+    font-weight: 600; letter-spacing: -0.02em; line-height: 1; margin: 0 0 10px;
+  }
+  .pricing .price small { font-family: var(--font); font-size: 1.15rem; font-weight: 500; color: var(--slate); letter-spacing: 0; }
+  .pricing .terms { color: var(--slate); margin: 0 auto 28px; max-width: 30em; }
+
+  .site-footer { border-top: 1px solid var(--line); padding: 32px 0 44px; color: var(--slate); font-size: 0.93rem; }
+  .site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+  @media (max-width: 860px) {
+    .hero { padding: 48px 0 56px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .compare { grid-template-columns: 1fr; }
+    .features > div { grid-template-columns: 1fr; gap: 6px; }
+    .steps { grid-template-columns: 1fr; }
+    .section { padding: 56px 0; }
+    .site-nav a.nav-link { display: none; }
+  }
+  @media (max-width: 480px) {
+    .tracker li { grid-template-columns: minmax(0, 1fr) auto; }
+    .tracker .due { grid-column: 1; grid-row: 2; }
+    .brand span { display: none; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <!-- Copy perimity-mark-v2.png from the Pulse site into an assets/ folder in this repo. -->
+    <a class="brand" href="#top">
+      <img src="assets/perimity-mark-v2.png" alt="" width="28" height="28">
+      Perimity <span>Subjectivity Tracker</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a class="nav-link" href="#what-you-get">What you get</a>
+      <a class="nav-link" href="#how-it-works">How it works</a>
+      <a class="nav-link" href="#pricing">Pricing</a>
+      <!-- TODO: point this at the signup page if it has its own URL. -->
+      <a class="btn btn-small" href="https://tracker.perimity.io">Start free trial</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Every open subjectivity, in one clean list.</h1>
+        <p class="lede">Subjectivity Tracker is built for cyber brokers. Track what each carrier is waiting on, per submission, and get reminded before anything slips past bind.</p>
+        <div class="hero-actions">
+          <a class="btn" href="https://tracker.perimity.io">Start free 30-day trial</a>
+          <a class="text-link" href="#how-it-works">See how it works</a>
+        </div>
+      </div>
+
+      <!-- Illustrative example. Swap for a real dashboard screenshot when you have one. -->
+      <div class="tracker" role="img" aria-label="Example subjectivity list for one submission, showing each item's due date and status">
+        <div class="tracker-head">
+          <strong>Harborline Logistics, renewal</strong>
+          <span>Binds Oct 30</span>
+        </div>
+        <ul>
+          <li><span>SOC 2 Type II report</span><span class="due">Due in 2 days</span><span class="pill open">Open</span></li>
+          <li><span>Offline backup attestation</span><span class="due">Due in 5 days</span><span class="pill open">Open</span></li>
+          <li><span>EDR confirmation</span><span class="due">Sent Oct 12</span><span class="pill sent">Submitted</span></li>
+          <li><span>MFA screenshot, email and remote access</span><span class="due">Oct 9</span><span class="pill clear">Cleared</span></li>
+          <li><span>Signed ransomware supplemental</span><span class="due">Oct 7</span><span class="pill clear">Cleared</span></li>
+        </ul>
+        <div class="tracker-foot">2 open, 1 submitted, 2 cleared. Next reminder goes out tomorrow morning.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <h2>Chasing subjectivities shouldn't depend on your memory.</h2>
+      <div class="compare">
+        <div class="before">
+          <h3>Today</h3>
+          <p>Subjectivities live in email threads and spreadsheets. It isn't a very sophisticated process, and one missed MFA screenshot can stall a bind or put coverage at risk.</p>
+        </div>
+        <div class="after">
+          <h3>With Subjectivity Tracker</h3>
+          <p>Each submission gets its own itemized list. Every item has a status and a due date, and a daily email tells you what is still outstanding.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="what-you-get">
+    <div class="wrap">
+      <h2>What you get</h2>
+      <dl class="features">
+        <div>
+          <dt>Built for cyber</dt>
+          <dd>One-click templates for the items carriers ask for: MFA screenshot, EDR confirmation, SOC 2 report, and more. Add your own for anything unusual.</dd>
+        </div>
+        <div>
+          <dt>Know what's urgent</dt>
+          <dd>A dashboard sorted by deadline, with every item marked open, submitted, or cleared.</dd>
+        </div>
+        <div>
+          <dt>Automatic reminders</dt>
+          <dd>A daily email with what's outstanding, so you stop chasing from memory.</dd>
+        </div>
+        <div>
+          <dt>Share it in seconds</dt>
+          <dd>Print or export a clean itemized list for your client or your carrier.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section alt" id="how-it-works">
+    <div class="wrap">
+      <h2>Set up your first submission in a few minutes.</h2>
+      <ol class="steps">
+        <li>
+          <h3>Add a submission</h3>
+          <p>Enter the client and the bind date.</p>
+        </li>
+        <li>
+          <h3>Pick its subjectivities</h3>
+          <p>Choose from the cyber templates or type in your own.</p>
+        </li>
+        <li>
+          <h3>Update as items come in</h3>
+          <p>Mark each one submitted or cleared. We remind you about the rest.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section pricing" id="pricing">
+    <div class="wrap">
+      <h2>One flat price for your whole brokerage.</h2>
+      <p class="price">$29 <small>per month</small></p>
+      <!-- TODO: confirm "Cancel anytime" and the 30-day trial match how signup and billing work. -->
+      <p class="terms">No per-user fees. No sales call. Cancel anytime. Your first 30 days are free.</p>
+      <a class="btn" href="https://tracker.perimity.io">Start free 30-day trial</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>&copy; 2026 Perimity, Inc. All rights reserved.</span>
+    <!-- TODO: add a contact email here, e.g. <a href="mailto:...">Questions? Email us</a> -->
+    <span>Also from Perimity: <a href="https://pulse.perimity.io/">Pulse</a></span>
+  </div>
+</footer>
+</body>
+</html>
