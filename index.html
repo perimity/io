@@ -257,6 +257,102 @@
     .cta { justify-self: start; }
   }
 
+  /* ---------------- Why Perimity ---------------- */
+
+  .story {
+    background: var(--color-purple-wash);
+    border-top: 1px solid var(--color-line);
+  }
+
+  .story-inner {
+    max-width: 1180px;
+    margin-inline: auto;
+    padding: clamp(3rem, 7vw, 5rem) clamp(1.25rem, 4vw, 3rem);
+  }
+
+  .story .eyebrow { background: var(--color-surface); }
+
+  .story h2 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.9rem, 4.5vw, 2.8rem);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+  }
+
+  .story h2 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--color-purple-deep);
+  }
+
+  .story-text {
+    margin-top: 1.2rem;
+    font-size: clamp(1.02rem, 1.5vw, 1.15rem);
+    color: var(--color-ink-soft);
+    max-width: 58ch;
+    line-height: 1.65;
+  }
+
+  .story-text strong { color: var(--color-ink); font-weight: 600; }
+
+  .shifts + .story-text { margin-top: clamp(1.8rem, 4vw, 2.6rem); }
+
+  .shifts {
+    list-style: none;
+    margin-top: clamp(1.8rem, 4vw, 2.6rem);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .shift {
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: 14px;
+    padding: 1.2rem 1.25rem 1.3rem;
+    box-shadow: 0 1px 2px rgba(20,18,26,0.03), 0 6px 18px rgba(20,18,26,0.04);
+  }
+
+  .shift-num {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-purple-deep);
+  }
+
+  .shift h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-top: 0.35rem;
+  }
+
+  .shift p {
+    margin-top: 0.45rem;
+    font-size: 0.94rem;
+    color: var(--color-ink-soft);
+    line-height: 1.55;
+  }
+
+  .shift-source {
+    display: inline-block;
+    margin-top: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--color-purple-deep);
+    text-underline-offset: 3px;
+  }
+
+  @media (max-width: 960px) {
+    .shifts { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 560px) {
+    .shifts { grid-template-columns: 1fr; }
+  }
+
   /* ---------------- Footer ---------------- */
 
   footer {
@@ -268,7 +364,6 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 0.8rem;
-    border-top: 1px solid var(--color-line);
     font-family: var(--font-mono);
     font-size: 0.76rem;
     color: var(--color-ink-soft);
@@ -349,6 +444,50 @@
         </p>
       </div>
       <a class="cta" href="https://tracker.perimity.io" target="_blank" rel="noopener">Try it now →</a>
+    </div>
+  </section>
+
+  <section class="story" id="why-perimity">
+    <div class="story-inner">
+      <span class="eyebrow">Why &ldquo;Perimity&rdquo;</span>
+      <h2>Perimeter <em>plus</em> infinity.</h2>
+      <p class="story-text">
+        I spent years as a senior firewall engineer and architect. Back then the perimeter was a
+        line you could point to. It has been moving ever since.
+      </p>
+
+      <ol class="shifts">
+        <li class="shift">
+          <span class="shift-num">Shift 01</span>
+          <h3>The firewall</h3>
+          <p>One line drawn around the network, with everything worth protecting behind it.</p>
+        </li>
+        <li class="shift">
+          <span class="shift-num">Shift 02</span>
+          <h3>The user</h3>
+          <p>Work left the building, and identity became something attackers could walk right through.</p>
+        </li>
+        <li class="shift">
+          <span class="shift-num">Shift 03</span>
+          <h3>The policy</h3>
+          <p>
+            Once attackers are inside, they go looking for the cyber insurance policy itself,
+            because knowing a company's coverage tells them how much to demand.
+          </p>
+          <a class="shift-source" href="https://www.coalitioninc.com/blog/cyber-insurance/how-hackers-leverage-insurance-details-in-ransomware-attacks" target="_blank" rel="noopener">Source: Coalition</a>
+        </li>
+        <li class="shift">
+          <span class="shift-num">Shift 04</span>
+          <h3>Everything</h3>
+          <p>AI is multiplying the interfaces a company has to defend faster than anyone can count them.</p>
+        </li>
+      </ol>
+
+      <p class="story-text">
+        The perimeter isn't a line anymore. It's effectively infinite, and it never stops changing.
+        <strong>Perimity exists because insurance still has to price that risk, and it can't do it
+        from a once-a-year questionnaire.</strong>
+      </p>
     </div>
   </section>
 
