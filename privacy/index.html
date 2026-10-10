@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Perimity</title>
+<meta name="description" content="What Perimity collects, why, who helps us process it, and how to get your data exported or deleted.">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-bg: #faf9fc;
+    --color-surface: #ffffff;
+    --color-ink: #14121a;
+    --color-ink-soft: #5b5566;
+    --color-purple-deep: #6731a3;
+    --color-purple-light: #a484c7;
+    --color-purple-wash: #f1ecf7;
+    --color-line: #e4e0ea;
+
+    --font-display: "Fraunces", Georgia, serif;
+    --font-body: "IBM Plex Sans", -apple-system, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--color-purple-deep); text-underline-offset: 3px; }
+
+  :focus-visible {
+    outline: 2px solid var(--color-purple-deep);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4rem clamp(1rem, 4vw, 3rem);
+    max-width: 1180px;
+    margin-inline: auto;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    text-decoration: none;
+    color: var(--color-ink);
+  }
+
+  .brand-mark { width: 48px; height: 20px; display: block; }
+
+  .brand-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.25rem;
+    letter-spacing: -0.01em;
+  }
+
+  main {
+    max-width: 760px;
+    margin-inline: auto;
+    padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 4vw, 3rem) clamp(3rem, 8vw, 5rem);
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-purple-deep);
+    background: var(--color-purple-wash);
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    margin-bottom: 1.4rem;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(2.1rem, 5vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+  }
+
+  .lede {
+    margin-top: 1.2rem;
+    font-size: clamp(1.05rem, 1.6vw, 1.18rem);
+    color: var(--color-ink-soft);
+    line-height: 1.65;
+  }
+
+  .meta {
+    margin-top: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--color-ink-soft);
+  }
+
+  .toc {
+    margin-top: 2rem;
+    padding: 1.2rem 1.4rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: 14px;
+  }
+
+  .toc p {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-ink-soft);
+    margin-bottom: 0.6rem;
+  }
+
+  .toc ol {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.15rem 1.5rem;
+  }
+
+  .toc a {
+    display: block;
+    padding: 0.35rem 0;
+    text-decoration: none;
+    color: var(--color-ink);
+    font-size: 0.95rem;
+  }
+
+  .toc a:hover { color: var(--color-purple-deep); text-decoration: underline; }
+
+  section { margin-top: clamp(2.2rem, 5vw, 3rem); scroll-margin-top: 1.5rem; }
+
+  h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.55rem;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1.02rem;
+    margin-top: 1.5rem;
+  }
+
+  section p,
+  section li {
+    color: var(--color-ink-soft);
+    line-height: 1.65;
+  }
+
+  section p { margin-top: 0.8rem; }
+
+  section ul {
+    margin-top: 0.7rem;
+    padding-left: 1.2rem;
+  }
+
+  section li + li { margin-top: 0.4rem; }
+
+  section strong { color: var(--color-ink); font-weight: 600; }
+
+  .table-wrap {
+    margin-top: 1rem;
+    overflow-x: auto;
+    border: 1px solid var(--color-line);
+    border-radius: 14px;
+    background: var(--color-surface);
+  }
+
+  table {
+    width: 100%;
+    min-width: 560px;
+    border-collapse: collapse;
+    font-size: 0.93rem;
+  }
+
+  th, td {
+    text-align: left;
+    vertical-align: top;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--color-line);
+    line-height: 1.5;
+  }
+
+  tr:last-child td { border-bottom: 0; }
+
+  th {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--color-ink-soft);
+    background: var(--color-bg);
+  }
+
+  td { color: var(--color-ink-soft); }
+  td:first-child { color: var(--color-ink); font-weight: 600; white-space: nowrap; }
+
+  footer {
+    max-width: 1180px;
+    margin-inline: auto;
+    padding: 1.6rem clamp(1rem, 4vw, 3rem) 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    border-top: 1px solid var(--color-line);
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    color: var(--color-ink-soft);
+  }
+
+  footer a { text-decoration: none; color: var(--color-ink-soft); }
+  footer a:hover { color: var(--color-purple-deep); }
+
+  @media (max-width: 560px) {
+    .toc ol { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <a class="brand" href="../">
+      <img class="brand-mark" src="../assets/perimity-mark.svg" alt="" width="48" height="20">
+      <span class="brand-name">Perimity</span>
+    </a>
+  </header>
+
+  <main>
+    <span class="eyebrow">Privacy</span>
+    <h1>Privacy Policy</h1>
+    <p class="lede">
+      This page explains what Perimity collects, why we collect it, which companies help us
+      process it, and how you can get your data exported or deleted. It covers this website
+      and Subjectivity Tracker.
+    </p>
+    <p class="meta">Effective [EFFECTIVE DATE]</p>
+
+    <nav class="toc" aria-label="On this page">
+      <p>On this page</p>
+      <ol>
+        <li><a href="#who-we-are">Who we are</a></li>
+        <li><a href="#website">This website</a></li>
+        <li><a href="#tracker">Subjectivity Tracker</a></li>
+        <li><a href="#ai">How AI is used</a></li>
+        <li><a href="#service-providers">Service providers</a></li>
+        <li><a href="#retention">How long we keep data</a></li>
+        <li><a href="#your-choices">Export and deletion</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#pulse">Pulse</a></li>
+        <li><a href="#changes">Changes and contact</a></li>
+      </ol>
+    </nav>
+
+    <section id="who-we-are">
+      <h2>Who we are</h2>
+      <p>
+        Perimity LLC ("Perimity", "we") builds software for the cyber insurance industry. We are
+        based in the United States, and our products are intended for business use by insurance
+        professionals in the United States.
+      </p>
+      <p>
+        We do not sell personal information, and we do not show advertising.
+      </p>
+    </section>
+
+    <section id="website">
+      <h2>This website</h2>
+      <p>
+        The pages at perimity.io are informational. They have no sign-up forms, no analytics
+        scripts, and no advertising or tracking cookies.
+      </p>
+      <p>
+        Two outside services see your IP address and browser details when you load a page,
+        as any web host does: GitHub, which hosts the site, and Google Fonts, which serves
+        the typefaces. If you email us, we receive your email address and whatever you choose
+        to write.
+      </p>
+    </section>
+
+    <section id="tracker">
+      <h2>Subjectivity Tracker</h2>
+      <p>
+        Subjectivity Tracker (tracker.perimity.io) helps insurance brokers keep track of the
+        conditions a carrier wants satisfied before binding. Here is what it stores.
+      </p>
+
+      <h3>Your account</h3>
+      <ul>
+        <li>Your email address.</li>
+        <li>If you sign up with a password, a protected (hashed) version of it. We cannot read your password.</li>
+        <li>If you sign in with Google or Microsoft, the basic profile details that provider shares with us, such as your name and email address. We do not receive your Google or Microsoft password, and we do not get access to your mailbox, files, or calendar.</li>
+      </ul>
+
+      <h3>The records you create</h3>
+      <ul>
+        <li><strong>Submissions:</strong> the client name and the carrier name you enter.</li>
+        <li><strong>Subjectivities:</strong> the description of each item, its due date, and its status.</li>
+      </ul>
+
+      <h3>Emails you forward</h3>
+      <p>
+        You can forward a carrier email to your Tracker intake address so that Tracker drafts
+        the subjectivity items for you. When you do:
+      </p>
+      <ul>
+        <li>Our email provider receives the message and holds it so Tracker can read it.</li>
+        <li>The subject line and body are sent to an AI model, which drafts a list of items. See <a href="#ai">How AI is used</a>.</li>
+        <li>Tracker saves the subject line, the address the email was sent from, and the drafted items. Tracker's own database does not keep the body of the email.</li>
+        <li>Nothing is added to your records until you review the drafted items and confirm them.</li>
+        <li>Email from an address that does not match a Tracker account is ignored.</li>
+      </ul>
+
+      <h3>Reminder emails</h3>
+      <p>
+        Tracker emails you a summary when items are overdue or due within three days. Those
+        emails include the client name, the carrier name, and the item description, so they
+        pass through our email provider.
+      </p>
+
+      <h3>Cookies</h3>
+      <p>
+        Tracker uses only the cookies needed to keep you signed in. It does not use analytics,
+        advertising, or tracking cookies.
+      </p>
+
+      <h3>Information about your clients</h3>
+      <p>
+        Carrier emails and submission records often name your clients and describe their
+        insurance placements. You decide what to enter or forward, and you are responsible for
+        having the right to share it with us. We handle that information only to provide
+        Tracker to you. We do not use it for our own marketing, and we do not contact your
+        clients.
+      </p>
+    </section>
+
+    <section id="ai">
+      <h2>How AI is used</h2>
+      <p>
+        Tracker uses an AI model from Anthropic for one job: reading an email you forward and
+        drafting the subjectivity items it contains. The email's subject line and body are sent
+        to Anthropic for that purpose.
+      </p>
+      <ul>
+        <li>The AI only drafts. You review and confirm every item before it becomes part of your records.</li>
+        <li>We do not use your data to train AI models.</li>
+        <li>Records you type in by hand are not sent to the AI model.</li>
+      </ul>
+    </section>
+
+    <section id="service-providers">
+      <h2>Service providers</h2>
+      <p>
+        These companies process data for us so that our products work. We share only what each
+        one needs for its job.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Company</th>
+              <th scope="col">What it does for us</th>
+              <th scope="col">What it handles</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Supabase</td>
+              <td>Database and sign-in for Tracker, hosted in the United States</td>
+              <td>Account details and all Tracker records</td>
+            </tr>
+            <tr>
+              <td>Vercel</td>
+              <td>Hosts the Tracker application</td>
+              <td>Requests to Tracker, including forwarded email content while it is being processed</td>
+            </tr>
+            <tr>
+              <td>Resend</td>
+              <td>Receives forwarded emails and sends reminder emails</td>
+              <td>Forwarded emails, reminder email content, your email address</td>
+            </tr>
+            <tr>
+              <td>Anthropic</td>
+              <td>AI model that drafts items from forwarded emails</td>
+              <td>Subject line and body of forwarded emails</td>
+            </tr>
+            <tr>
+              <td>Google</td>
+              <td>Optional sign-in for Tracker; fonts on this website</td>
+              <td>Sign-in details if you choose Google; IP address when fonts load</td>
+            </tr>
+            <tr>
+              <td>Microsoft</td>
+              <td>Optional sign-in for Tracker</td>
+              <td>Sign-in details if you choose Microsoft</td>
+            </tr>
+            <tr>
+              <td>GitHub</td>
+              <td>Hosts this website</td>
+              <td>IP address and browser details of website visitors</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        We may also disclose information if the law requires it, or as part of a merger or sale
+        of the business, in which case this policy would continue to apply to your data.
+      </p>
+    </section>
+
+    <section id="retention">
+      <h2>How long we keep data</h2>
+      <ul>
+        <li>We keep your account and your Tracker records for as long as your account is open.</li>
+        <li>Drafted items from forwarded emails are kept after you confirm or dismiss them, until you ask us to delete them or your account is deleted.</li>
+        <li>When you ask us to delete your account, we delete your account details and all of your Tracker records within 30 days.</li>
+        <li>Our service providers may keep their own copies, such as received emails and system logs, for a limited time under their own retention schedules.</li>
+      </ul>
+    </section>
+
+    <section id="your-choices">
+      <h2>Export and deletion</h2>
+      <ul>
+        <li><strong>Export:</strong> each submission in Tracker has a Print / Export view you can save or print. If you want a complete copy of your records, email us and we will send one.</li>
+        <li><strong>Correction:</strong> you can update the status of your records in Tracker. For anything else you cannot change yourself, email us.</li>
+        <li><strong>Deletion:</strong> to delete specific records or your whole account, email us from the address on your account. We will confirm when it is done.</li>
+        <li><strong>Sign-in connections:</strong> you can remove Tracker's connection to your Google or Microsoft account at any time in that provider's account settings.</li>
+      </ul>
+    </section>
+
+    <section id="security">
+      <h2>Security</h2>
+      <ul>
+        <li>Data is encrypted in transit.</li>
+        <li>Each broker's records are restricted to that broker's account by rules enforced in the database itself.</li>
+        <li>Incoming email notifications are verified as coming from our email provider before they are processed.</li>
+      </ul>
+      <p>
+        No system is perfectly secure. If we learn of a breach affecting your data, we will
+        notify you as the law requires.
+      </p>
+      <p>
+        Tracker is a tracking aid. It is not a system of record, so keep the original carrier
+        correspondence in your own files.
+      </p>
+    </section>
+
+    <section id="pulse">
+      <h2>Pulse</h2>
+      <p>
+        Pulse is not yet open to customers. Before it connects to any customer's environment,
+        we will add a section here describing exactly what it reads and stores.
+      </p>
+    </section>
+
+    <section id="changes">
+      <h2>Changes and contact</h2>
+      <p>
+        If we change this policy in a way that affects how your data is handled, we will update
+        the effective date above and notify Tracker account holders by email before the change
+        takes effect.
+      </p>
+      <p>
+        Our products are for business use and are not directed at children.
+      </p>
+      <p>
+        Questions or requests: <a href="mailto:cjacobs@perimity.io">cjacobs@perimity.io</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Perimity</span>
+    <a href="../">Home</a>
+    <a href="mailto:cjacobs@perimity.io">cjacobs@perimity.io</a>
+  </footer>
+
+</body>
+</html>
