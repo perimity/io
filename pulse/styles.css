@@ -188,7 +188,7 @@ button { font: inherit; }
   color: var(--color-ink);
 }
 
-.brand-mark { height: 1.6rem; width: auto; }
+.brand-mark { height: 1.3rem; width: auto; }
 
 .brand-name {
   font-family: var(--font-display);
@@ -517,7 +517,7 @@ section:not(.hero) + section:not(.hero) {
   gap: 0.65rem;
 }
 
-.footer-brand .brand-mark { height: 1.5rem; margin-top: 0.15rem; }
+.footer-brand .brand-mark { height: 1.1rem; margin-top: 0.3rem; }
 
 .footer-name {
   font-family: var(--font-display);
