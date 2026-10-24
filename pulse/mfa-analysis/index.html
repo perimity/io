@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MFA Analysis — Pulse by Perimity</title>
+  <meta name="description" content="Pulse MFA Analysis: the MFA analysis insurers run after a breach, before it. Read-only from Microsoft 365: registration, enforcement, named exclusions, admin access and real sign-ins.">
+
+  <link rel="icon" type="image/png" href="../assets/perimity-mark-v2.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,ital@9..144,300,600;9..144,300,1&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="../">
+        <img class="brand-mark" src="../assets/perimity-mark-v2.png" alt="" width="34" height="35">
+        <span class="brand-name">Perimity</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../">Pulse</a>
+        <a href="#what-it-checks">What it checks</a>
+        <a href="#for-each-reader">For each reader</a>
+      </nav>
+
+      <a class="btn btn-primary btn-small" href="#request-access">Request a walkthrough</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero" id="top">
+      <div class="wrap hero-inner">
+        <p class="eyebrow"><a href="../" style="color:inherit;text-decoration:none">Pulse</a> &middot; MFA Analysis &middot; Live</p>
+        <h1 class="hero-title">
+          The MFA analysis insurers run after a breach. <em>Before</em> it.
+        </h1>
+        <p class="hero-sub">
+          After an incident, one of the first things an insurer asks for is an MFA analysis.
+          Pulse runs it before the policy is bound, read-only from Microsoft 365, and keeps
+          running it through the term.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#request-access">Request a walkthrough</a>
+          <a class="btn btn-ghost" href="#what-it-checks">See what it checks</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="modules" id="what-it-checks">
+      <div class="wrap">
+        <p class="eyebrow">What it checks</p>
+        <h2 class="section-title">Six questions behind one &ldquo;Yes.&rdquo;</h2>
+        <p class="modules-intro">The application asks whether MFA is enforced. MFA Analysis answers the questions an insurer would ask after a claim.</p>
+        <div class="checks-grid">
+          <article class="check-card">
+            <p class="check-q">Is everyone enrolled?</p>
+            <h3>Registration</h3>
+            <p>Which users have MFA set up, and which methods they use, from phishing-resistant keys to text messages.</p>
+          </article>
+          <article class="check-card">
+            <p class="check-q">Is it actually required?</p>
+            <h3>Enforcement</h3>
+            <p>Whether a policy requires MFA for each user, or whether it only exists on paper.</p>
+          </article>
+          <article class="check-card">
+            <p class="check-q">Who is left out?</p>
+            <h3>Named exclusions</h3>
+            <p>Every account excluded from MFA, by name, and the policy that excludes it.</p>
+          </article>
+          <article class="check-card">
+            <p class="check-q">Are admins protected?</p>
+            <h3>Admin access</h3>
+            <p>How many Global Admins there are, whether each is covered, and with what method.</p>
+          </article>
+          <article class="check-card">
+            <p class="check-q">Did MFA really happen?</p>
+            <h3>Real sign-ins</h3>
+            <p>Who signed in with a password alone in the last 30 days, not just what the settings say.</p>
+          </article>
+          <article class="check-card">
+            <p class="check-q">Is there a way around it?</p>
+            <h3>Legacy sign-in</h3>
+            <p>Whether old protocols that skip MFA are blocked, and whether anyone still uses them.</p>
+          </article>
+        </div>
+        <div class="license-note">
+          <strong>Works best with Microsoft 365 Business Premium.</strong>
+          Registration and sign-in evidence need Entra ID P1, which Business Premium includes. Without it, Pulse reports what it can verify and marks the rest &ldquo;not assessable,&rdquo; never as a fail.
+        </div>
+      </div>
+    </section>
+
+    <section class="audience" id="for-each-reader">
+      <div class="wrap">
+        <p class="eyebrow">For each reader</p>
+        <h2 class="section-title">Same findings. What they mean for you.</h2>
+        <p class="modules-intro">Every report includes the likely underwriter subjectivities: what a carrier may ask the business to fix or confirm before offering terms. Each version shows what that means for the person reading it.</p>
+        <table class="reader-table">
+          <tbody>
+            <tr><th scope="row"><span class="aud-pill">MSP</span></th><td>A fix list your team can act on, and a renewal evidence pack for each client.</td></tr>
+            <tr><th scope="row"><span class="aud-pill">Broker</span></th><td>What could slow or block the placement, and what to fix before you submit.</td></tr>
+            <tr><th scope="row"><span class="aud-pill">Organization</span></th><td>What to fix to get or keep coverage, before a wrong &ldquo;Yes&rdquo; reduces or voids a claim.</td></tr>
+            <tr><th scope="row"><span class="aud-pill">Underwriter</span></th><td>Conditions to attach before binding, backed by evidence instead of a checkbox.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="pipeline" id="how-it-works">
+      <div class="wrap">
+        <p class="eyebrow">How it works</p>
+        <h2 class="section-title">Minutes to connect. Nothing changes in your tenant.</h2>
+        <ol class="pipeline-list">
+          <li class="pipeline-step"><span class="pipeline-index">01</span><div><h3>Connect</h3><p>A Microsoft 365 admin signs in and approves read-only access. Pulse never changes a setting.</p></div></li>
+          <li class="pipeline-step"><span class="pipeline-index">02</span><div><h3>Analyze</h3><p>Pulse reads MFA configuration and the last 30 days of sign-in activity, and scores each finding against CIS Controls 5 and 6.</p></div></li>
+          <li class="pipeline-step"><span class="pipeline-index">03</span><div><h3>Share</h3><p>Get the report for your role, and share a copy with your broker or insurer through a private link.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="cta-band" id="request-access">
+      <div class="wrap cta-inner">
+        <div class="cta-copy">
+          <h2 class="section-title">See a live MFA Analysis report.</h2>
+          <p>Leave your work email and we will walk you through a real report from a test company, from the view of your choice: MSP, broker, organization or underwriter.</p>
+        </div>
+        <div class="cta-form-wrap">
+          <form class="cta-form" id="access-form">
+            <label class="visually-hidden" for="email">Work email</label>
+            <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required>
+            <button class="btn btn-primary" type="submit">Request a walkthrough</button>
+          </form>
+          <p class="cta-note">We'll only use this to set up the walkthrough.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <div class="footer-brand">
+        <img class="brand-mark" src="../assets/perimity-mark-v2.png" alt="" width="27" height="28">
+        <div>
+          <p class="footer-name">Perimity</p>
+          <p class="footer-tagline">Verified evidence for cyber insurance.</p>
+        </div>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="../">Pulse</a>
+        <a href="#what-it-checks">What it checks</a>
+        <a href="#for-each-reader">For each reader</a>
+        <a href="#request-access">Request a walkthrough</a>
+      </nav>
+    </div>
+    <div class="wrap">
+      <p class="footer-copy">&copy; <span id="year">2026</span> Perimity, LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
