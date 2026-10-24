@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pulse by Perimity — The intelligence layer between cybersecurity and cyber insurance</title>
-  <meta name="description" content="Pulse evaluates control integrity and translates technical findings into standardized, underwriting-aligned signals — turning raw evidence into intelligence brokers, underwriters, and organizations can trust.">
+  <title>Pulse by Perimity — Verified MFA analysis for cyber insurance</title>
+  <meta name="description" content="Pulse reads Microsoft 365 with read-only access and shows what is actually true behind the yes-or-no answers on a cyber insurance application, starting with MFA Analysis.">
 
   <link rel="icon" type="image/png" href="assets/perimity-mark-v2.png">
 
@@ -26,13 +26,13 @@
       </a>
 
       <nav class="site-nav" aria-label="Primary">
-        <a href="#product">Product</a>
-        <a href="#how-it-works">How it works</a>
-        <a href="#demo">Demo</a>
+        <a href="#what-yes-means">What we check</a>
+        <a href="#modules">Modules</a>
         <a href="#who-its-for">Who it's for</a>
+        <a href="#how-it-works">How it works</a>
       </nav>
 
-      <a class="btn btn-primary btn-small" href="#request-access">Join the waitlist</a>
+      <a class="btn btn-primary btn-small" href="#request-access">Request a walkthrough</a>
     </div>
   </header>
 
@@ -40,18 +40,18 @@
 
     <section class="hero" id="top">
       <div class="wrap hero-inner">
-        <p class="eyebrow">The intelligence layer between cybersecurity and cyber insurance</p>
+        <p class="eyebrow">Pulse by Perimity &middot; Verified evidence for cyber insurance</p>
         <h1 class="hero-title">
-          Security controls get reported. Pulse <em>verifies</em> them.
+          The MFA analysis insurers run after a breach. <em>Before</em> it.
         </h1>
         <p class="hero-sub">
-          Pulse reads control configuration directly from the environment and translates it into
-          standardized, underwriting-aligned signals — turning self-reported answers into
-          verified evidence brokers, underwriters, and organizations can trust.
+          A cyber insurance application asks yes-or-no questions. Pulse reads Microsoft 365 with
+          read-only access and shows what is actually true behind each &ldquo;Yes,&rdquo; so the
+          gap is found before a claim, not during one.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#request-access">Join the waitlist</a>
-          <a class="btn btn-ghost" href="#how-it-works">See how it works</a>
+          <a class="btn btn-primary" href="#request-access">Request a walkthrough</a>
+          <a class="btn btn-ghost" href="#what-yes-means">See what Pulse checks</a>
         </div>
       </div>
 
@@ -66,36 +66,10 @@
       </figure>
     </section>
 
-    <section class="problem" id="product">
-      <div class="wrap">
-        <p class="eyebrow">The problem</p>
-        <h2 class="section-title">Underwriting runs on what's reported. It should run on what's real.</h2>
-
-        <div class="problem-grid">
-          <div class="problem-col">
-            <p class="col-label">Today</p>
-            <p>
-              Cyber risk gets priced off self-attestations, point-in-time scans, and
-              questionnaires that tell you a control is configured — not whether it's actually
-              working. A checkbox and a functioning control look identical on paper. They aren't.
-            </p>
-          </div>
-          <div class="problem-col problem-col-accent">
-            <p class="col-label">With Pulse</p>
-            <p>
-              Pulse evaluates control integrity directly, not self-reported status — then
-              standardizes the findings into signals that map to how underwriters already
-              think about risk. Comparable across submissions. Current, not point-in-time.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-        <section class="yes-means" id="what-yes-means">
+    <section class="yes-means" id="what-yes-means">
       <div class="wrap">
         <p class="eyebrow">What &ldquo;yes&rdquo; actually means</p>
-        <h2 class="section-title">The application asks yes-or-no questions. Pulse checks the environment.</h2>
+        <h2 class="section-title">The application asks. Pulse checks.</h2>
         <div class="yes-table-wrap">
           <table class="yes-table">
             <thead>
@@ -104,22 +78,22 @@
             <tbody>
             <tr>
               <th scope="row"><span class="yes-q">&ldquo;MFA enforced for all users?&rdquo;</span><span class="yes-ans"><svg viewBox="0 0 20 20" aria-hidden="true" class="yes-check"><path d="M8.1 14.3 3.8 10l1.4-1.4 2.9 2.9 6.7-6.7 1.4 1.4z"/></svg>Yes</span></th>
-              <td data-label="What Pulse checks">Legacy sign-in, Conditional Access coverage, exclusions</td>
-              <td data-label="Example finding" class="yes-find">MFA policy on, but 3 accounts excluded, including an admin. Legacy sign-in still allowed.</td>
-            </tr>
-            <tr>
-              <th scope="row"><span class="yes-q">&ldquo;EDR on all endpoints?&rdquo;</span><span class="yes-ans"><svg viewBox="0 0 20 20" aria-hidden="true" class="yes-check"><path d="M8.1 14.3 3.8 10l1.4-1.4 2.9 2.9 6.7-6.7 1.4 1.4z"/></svg>Yes</span></th>
-              <td data-label="What Pulse checks">Coverage rate, exclusions, how current definitions are <span class="soon">Coming soon</span></td>
-              <td data-label="Example finding" class="yes-find">88% of devices covered, a folder-wide exclusion, and 4 devices with outdated definitions.</td>
+              <td data-label="What Pulse checks">Who is registered, who is actually required, named exclusions, legacy sign-in, and sign-ins without MFA in the last 30 days <span class="mod-tag live">MFA Analysis</span></td>
+              <td data-label="Example finding" class="yes-find">MFA policy on, but 3 accounts excluded, including an admin. 6 users signed in with a password alone last month.</td>
             </tr>
             <tr>
               <th scope="row"><span class="yes-q">&ldquo;Admin access restricted?&rdquo;</span><span class="yes-ans"><svg viewBox="0 0 20 20" aria-hidden="true" class="yes-check"><path d="M8.1 14.3 3.8 10l1.4-1.4 2.9 2.9 6.7-6.7 1.4 1.4z"/></svg>Yes</span></th>
-              <td data-label="What Pulse checks">Standing vs. just-in-time admin, number of privileged roles</td>
-              <td data-label="Example finding" class="yes-find">9 permanent Global Admins.</td>
+              <td data-label="What Pulse checks">Number of Global Admins, admin MFA coverage and method strength, standing vs. just-in-time access <span class="mod-tag live">MFA Analysis</span></td>
+              <td data-label="Example finding" class="yes-find">9 permanent Global Admins, 2 of them using text-message codes.</td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="yes-q">&ldquo;EDR on all endpoints?&rdquo;</span><span class="yes-ans"><svg viewBox="0 0 20 20" aria-hidden="true" class="yes-check"><path d="M8.1 14.3 3.8 10l1.4-1.4 2.9 2.9 6.7-6.7 1.4 1.4z"/></svg>Yes</span></th>
+              <td data-label="What Pulse checks">Coverage rate, exclusions, how current definitions are <span class="mod-tag">EDR</span></td>
+              <td data-label="Example finding" class="yes-find">88% of devices covered, a folder-wide exclusion, and 4 devices with outdated definitions.</td>
             </tr>
             <tr>
               <th scope="row"><span class="yes-q">&ldquo;Critical patches applied promptly?&rdquo;</span><span class="yes-ans"><svg viewBox="0 0 20 20" aria-hidden="true" class="yes-check"><path d="M8.1 14.3 3.8 10l1.4-1.4 2.9 2.9 6.7-6.7 1.4 1.4z"/></svg>Yes</span></th>
-              <td data-label="What Pulse checks">Known vulnerabilities, recommendation coverage <span class="soon">Coming soon</span></td>
+              <td data-label="What Pulse checks">Known vulnerabilities, patch status on managed devices <span class="mod-tag">Vulnerability</span></td>
               <td data-label="Example finding" class="yes-find">12 critical vulnerabilities open more than 30 days.</td>
             </tr>
             </tbody>
@@ -129,38 +103,101 @@
       </div>
     </section>
 
+    <section class="modules" id="modules">
+      <div class="wrap">
+        <p class="eyebrow">Modules</p>
+        <h2 class="section-title">One platform. One module per control.</h2>
+        <p class="modules-intro">Each module reads one area of the environment and produces its own report. Run one, or combine them into a single view.</p>
+        <div class="modules-grid">
+          <article class="module-card module-live">
+            <span class="module-status live">Live</span>
+            <h3>MFA Analysis</h3>
+            <ul>
+              <li>MFA registration and enforcement, user by user</li>
+              <li>Conditional Access coverage and named exclusions</li>
+              <li>Admin access and method strength</li>
+              <li>Real sign-ins: who signed in without MFA</li>
+            </ul>
+            <p class="module-cis">CIS Controls 5 and 6</p>
+          </article>
+          <article class="module-card">
+            <span class="module-status">In development</span>
+            <h3>EDR</h3>
+            <ul>
+              <li>Coverage across devices</li>
+              <li>Exclusions</li>
+              <li>Definition currency</li>
+            </ul>
+            <p class="module-cis">CIS Control 10</p>
+          </article>
+          <article class="module-card">
+            <span class="module-status">In development</span>
+            <h3>Vulnerability &amp; Patching</h3>
+            <ul>
+              <li>Discovered vulnerabilities</li>
+              <li>Patch status on managed devices</li>
+              <li>Time to remediate</li>
+            </ul>
+            <p class="module-cis">CIS Control 7</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="audience" id="who-its-for">
+      <div class="wrap">
+        <p class="eyebrow">Who it's for</p>
+        <h2 class="section-title">One report. Read from every side of the policy.</h2>
+        <p class="modules-intro">The findings stay the same. Each version of the report shows what they mean for the person reading it.</p>
+        <div class="audience-grid four">
+          <article class="audience-card">
+            <span class="aud-pill">MSP</span>
+            <h3>Prove your work</h3>
+            <p>A renewal evidence pack for every client, in the language their insurer uses, plus a fix list your team can act on.</p>
+          </article>
+          <article class="audience-card">
+            <span class="aud-pill">Broker</span>
+            <h3>Proof, not promises</h3>
+            <p>Walk into the carrier with verified controls behind the submission, and see what could slow the placement before you submit.</p>
+          </article>
+          <article class="audience-card">
+            <span class="aud-pill">Organization</span>
+            <h3>Know before your insurer does</h3>
+            <p>A wrong &ldquo;Yes&rdquo; can reduce or void a claim. See what is true now and what to fix to get or keep coverage.</p>
+          </article>
+          <article class="audience-card">
+            <span class="aud-pill">Underwriter</span>
+            <h3>Underwrite what is in place</h3>
+            <p>The MFA analysis you would see after a breach, on your desk before you quote, with likely subjectivities called out.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="pipeline" id="how-it-works">
       <div class="wrap">
-        <p class="eyebrow">How Pulse works</p>
-        <h2 class="section-title">From raw evidence to underwriting intelligence.</h2>
-
-        <ol class="pipeline-list">
+        <p class="eyebrow">How it works</p>
+        <h2 class="section-title">Minutes to connect. Nothing changes in your tenant.</h2>
+        <ol class="pipeline-list three">
           <li class="pipeline-step">
             <span class="pipeline-index">01</span>
             <div>
-              <h3>Collect evidence</h3>
-              <p>Pulse starts with identity security — beginning with Microsoft Entra ID — and is built as a modular platform that expands across the security stack over time.</p>
+              <h3>Connect</h3>
+              <p>A Microsoft 365 admin signs in and approves read-only access. Pulse never changes a setting.</p>
             </div>
           </li>
           <li class="pipeline-step">
             <span class="pipeline-index">02</span>
             <div>
-              <h3>Verify against the environment</h3>
-              <p>Each control is checked against what's actually configured — enforcement scope, exclusions, currency — rather than what was reported on a questionnaire.</p>
+              <h3>Analyze</h3>
+              <p>Pulse reads configuration and recent sign-in activity, and scores each finding against CIS Controls.</p>
             </div>
           </li>
           <li class="pipeline-step">
             <span class="pipeline-index">03</span>
             <div>
-              <h3>Generate standardized signals</h3>
-              <p>Findings are normalized into a consistent signal set — comparable across organizations, and current instead of point-in-time.</p>
-            </div>
-          </li>
-          <li class="pipeline-step">
-            <span class="pipeline-index">04</span>
-            <div>
-              <h3>Translate to underwriting intelligence</h3>
-              <p>Signals become meaningful assessments of risk, exposure, and insurance readiness — usable at submission, renewal, and across a portfolio.</p>
+              <h3>Share</h3>
+              <p>Get a report for your role, and share a copy with your broker or insurer through a private link.</p>
             </div>
           </li>
         </ol>
@@ -171,157 +208,26 @@
       <div class="wrap quote-wrap">
         <p class="eyebrow quote-eyebrow">From the field</p>
         <blockquote class="pull-quote">
-          "It's less <em>'do you have MFA?'</em> and more <em>'prove your MFA is working and monitored.'</em> The organizations that struggle aren't missing controls — they're missing the documentation discipline."
+          "It's less <em>'do you have MFA?'</em> and more <em>'prove your MFA is working and monitored.'</em>"
         </blockquote>
         <p class="quote-attribution">Gene Magerr &mdash; Healthcare CISO</p>
-      </div>
-    </section>
-
-    <section class="demo" id="demo">
-      <div class="wrap">
-        <p class="eyebrow">See Pulse in action</p>
-        <h2 class="section-title">Pick a posture. See the signal.</h2>
-        <p class="demo-intro">
-          Three identity security scenarios, run through Pulse's actual scoring pipeline —
-          not mockups. Starting with Microsoft Entra ID.
-        </p>
-
-        <div class="app-shell">
-          <div class="app-titlebar">
-            <span class="app-dots" aria-hidden="true">
-              <span></span><span></span><span></span>
-            </span>
-            <span class="app-titlebar-label">pulse.perimity.io — live preview</span>
-          </div>
-
-          <div class="app-toolbar">
-            <div class="demo-picker" role="tablist" aria-label="Demo scenario">
-              <button class="demo-tab" data-scenario="strong" role="tab" aria-selected="false">Strong posture</button>
-              <button class="demo-tab" data-scenario="mixed" role="tab" aria-selected="false">Mixed posture</button>
-              <button class="demo-tab" data-scenario="weak" role="tab" aria-selected="false">Weak posture</button>
-            </div>
-
-            <div class="role-picker" role="tablist" aria-label="View as">
-              <span class="role-picker-label">View as</span>
-              <button class="role-tab" data-role="underwriter" role="tab" aria-selected="false">Underwriter</button>
-              <button class="role-tab" data-role="broker" role="tab" aria-selected="false">Broker</button>
-              <button class="role-tab" data-role="organization" role="tab" aria-selected="false">Organization</button>
-            </div>
-
-            <p class="role-value-note" id="role-value-note" aria-live="polite"></p>
-          </div>
-
-          <div class="app-body">
-            <div class="demo-panel" id="demo-panel" aria-live="polite">
-              <p class="demo-loading">Loading scenario…</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="audience" id="who-its-for">
-      <div class="wrap">
-        <p class="eyebrow">Who it's for</p>
-        <h2 class="section-title">Built for every side of the submission.</h2>
-
-        <div class="audience-grid">
-          <article class="audience-card">
-            <h3>Brokers</h3>
-            <p>Bring underwriters a submission backed by verified control integrity, not a checklist.</p>
-          </article>
-          <article class="audience-card">
-            <h3>Underwriters</h3>
-            <p>Compare control integrity across submissions on one standardized signal set — instead of reconciling self-attestations line by line.</p>
-          </article>
-          <article class="audience-card">
-            <h3>Organizations</h3>
-            <p>See whether your controls actually work, not just whether they're configured — and know exactly what strengthens your standing at renewal.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-<section class="roadmap" id="roadmap">
-      <div class="wrap">
-        <p class="eyebrow">What's next</p>
-        <h2 class="section-title">Built for the whole life of a policy, not just the submission.</h2>
-        <p class="roadmap-intro">
-          Pulse today verifies identity and endpoint controls directly from a client's environment.
-          Three things we're actively building next:
-        </p>
-        <div class="roadmap-grid">
-          <article class="roadmap-card">
-            <span class="roadmap-tag">In development</span>
-            <h3>External vulnerability scanning</h3>
-            <p>An outside-in view — what's exposed to the internet — alongside the internal signal Pulse already verifies, so a submission reflects both sides of the risk.</p>
-          </article>
-          <article class="roadmap-card">
-            <span class="roadmap-tag">In development</span>
-            <h3>Vulnerability &amp; patch management</h3>
-            <p>Internal visibility into discovered vulnerabilities and patch status on managed devices — CIS Control 7, evaluated directly instead of assumed.</p>
-          </article>
-          <article class="roadmap-card">
-            <span class="roadmap-tag">In development</span>
-            <h3>Post-bind assurance for MGAs &amp; carriers</h3>
-            <p>Ongoing verification that the controls attested at binding are still true throughout the policy term — not just a point-in-time snapshot.</p>
-          </article>
-        </div>
       </div>
     </section>
 
     <section class="cta-band" id="request-access">
       <div class="wrap cta-inner">
         <div class="cta-copy">
-          <h2 class="section-title">Be the first to see Pulse.</h2>
-          <p>We're building the intelligence layer between cybersecurity and cyber insurance, starting with identity security. Join the waitlist for early access — including what's coming next.</p>
+          <h2 class="section-title">See a live MFA Analysis report.</h2>
+          <p>Leave your work email and we will walk you through a real report from a test company, from the view of your choice: MSP, broker, organization or underwriter.</p>
         </div>
 
         <div class="cta-form-wrap">
           <form class="cta-form" id="access-form">
             <label class="visually-hidden" for="email">Work email</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="you@company.com"
-              autocomplete="email"
-              required
-            >
-            <button class="btn btn-primary" type="submit">Join the waitlist</button>
+            <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required>
+            <button class="btn btn-primary" type="submit">Request a walkthrough</button>
           </form>
-          <p class="cta-note">We'll only use this to reach out about early access.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="framework" id="framework">
-      <div class="wrap">
-        <p class="eyebrow">Grounded in a real standard</p>
-        <h2 class="section-title">Built on CIS Controls, not invented terminology.</h2>
-        <p class="framework-intro">
-          The CIS Controls are a widely-recognized, practical cybersecurity framework —
-          not a Pulse invention. Each category Pulse evaluates maps directly to a named
-          control, so the signal means the same thing to a broker, an underwriter, and a
-          security team.
-        </p>
-        <div class="framework-grid">
-          <div class="framework-item">
-            <p class="framework-signal">MFA</p>
-            <p class="framework-control">CIS Control 6 — Access Control Management</p>
-          </div>
-          <div class="framework-item">
-            <p class="framework-signal">EDR</p>
-            <p class="framework-control">CIS Control 10 — Malware Defenses</p>
-          </div>
-          <div class="framework-item">
-            <p class="framework-signal">Privileged Access</p>
-            <p class="framework-control">CIS Control 5 — Account Management</p>
-          </div>
-          <div class="framework-item">
-            <p class="framework-signal">Vulnerability Management</p>
-            <p class="framework-control">CIS Control 7 — Continuous Vulnerability Management</p>
-          </div>
+          <p class="cta-note">We'll only use this to set up the walkthrough.</p>
         </div>
       </div>
     </section>
@@ -334,20 +240,20 @@
         <img class="brand-mark" src="assets/perimity-mark-v2.png" alt="" width="27" height="28">
         <div>
           <p class="footer-name">Perimity</p>
-          <p class="footer-tagline">The intelligence layer between cybersecurity and cyber insurance.</p>
+          <p class="footer-tagline">Verified evidence for cyber insurance.</p>
         </div>
       </div>
 
       <nav class="footer-nav" aria-label="Footer">
-        <a href="#product">Product</a>
-        <a href="#how-it-works">How it works</a>
-        <a href="#demo">Demo</a>
+        <a href="#what-yes-means">What we check</a>
+        <a href="#modules">Modules</a>
         <a href="#who-its-for">Who it's for</a>
-        <a href="#request-access">Join the waitlist</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#request-access">Request a walkthrough</a>
       </nav>
     </div>
     <div class="wrap">
-      <p class="footer-copy">&copy; <span id="year">2026</span> Perimity, Inc. All rights reserved.</p>
+      <p class="footer-copy">&copy; <span id="year">2026</span> Perimity, LLC. All rights reserved.</p>
     </div>
   </footer>
 
