@@ -60,38 +60,46 @@
         <p class="eyebrow">What it checks</p>
         <h2 class="section-title">Six questions behind one &ldquo;Yes.&rdquo;</h2>
         <p class="modules-intro">The application asks whether MFA is enforced. MFA Analysis answers the questions an insurer would ask after a claim.</p>
-        <div class="checks-grid">
-          <article class="check-card">
-            <p class="check-q">Is everyone enrolled?</p>
-            <h3>Registration</h3>
-            <p>Which users have MFA set up, and which methods they use, from phishing-resistant keys to text messages.</p>
-          </article>
-          <article class="check-card">
-            <p class="check-q">Is it actually required?</p>
-            <h3>Enforcement</h3>
-            <p>Whether a policy requires MFA for each user, or whether it only exists on paper.</p>
-          </article>
-          <article class="check-card">
-            <p class="check-q">Who is left out?</p>
-            <h3>Named exclusions</h3>
-            <p>Every account excluded from MFA, by name, and the policy that excludes it.</p>
-          </article>
-          <article class="check-card">
-            <p class="check-q">Are admins protected?</p>
-            <h3>Admin access</h3>
-            <p>How many Global Admins there are, whether each is covered, and with what method.</p>
-          </article>
-          <article class="check-card">
-            <p class="check-q">Did MFA really happen?</p>
-            <h3>Real sign-ins</h3>
-            <p>Who signed in with a password alone in the last 30 days, not just what the settings say.</p>
-          </article>
-          <article class="check-card">
-            <p class="check-q">Is there a way around it?</p>
-            <h3>Legacy sign-in</h3>
-            <p>Whether old protocols that skip MFA are blocked, and whether anyone still uses them.</p>
-          </article>
+        <div class="yes-table-wrap checks-table">
+          <table class="yes-table">
+            <thead>
+              <tr><th scope="col">The question</th><th scope="col">What Pulse verifies</th><th scope="col">Example finding</th></tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row"><span class="chk-q">Is everyone enrolled?</span><span class="chk-name">Registration</span></th>
+              <td data-label="What Pulse verifies">Which users have MFA set up, and which methods they use, from phishing-resistant keys to text messages.</td>
+              <td data-label="Example finding" class="yes-find">4 of 25 users have no MFA method registered.</td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="chk-q">Is it actually required?</span><span class="chk-name">Enforcement</span></th>
+              <td data-label="What Pulse verifies">Whether a policy requires MFA for each user, or whether it only exists on paper.</td>
+              <td data-label="Example finding" class="yes-find">MFA policy is in report-only mode, so it is not enforced.</td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="chk-q">Who is left out?</span><span class="chk-name">Named exclusions</span></th>
+              <td data-label="What Pulse verifies">Every account excluded from MFA, by name, and the policy that excludes it.</td>
+              <td data-label="Example finding" class="yes-find">3 accounts excluded, including an admin.</td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="chk-q">Are admins protected?</span><span class="chk-name">Admin access</span></th>
+              <td data-label="What Pulse verifies">How many Global Admins there are, whether each is covered, and with what method.</td>
+              <td data-label="Example finding" class="yes-find">9 permanent Global Admins, 2 using text-message codes.</td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="chk-q">Did MFA really happen?</span><span class="chk-name">Real sign-ins</span></th>
+              <td data-label="What Pulse verifies">Who signed in with a password alone in the last 30 days, not just what the settings say.</td>
+              <td data-label="Example finding" class="yes-find">6 users signed in with a password alone last month.</td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="chk-q">Is there a way around it?</span><span class="chk-name">Legacy sign-in</span></th>
+              <td data-label="What Pulse verifies">Whether old protocols that skip MFA are blocked, and whether anyone still uses them.</td>
+              <td data-label="Example finding" class="yes-find">Legacy sign-in allowed; 1 mailbox still uses it.</td>
+            </tr>
+            </tbody>
+          </table>
         </div>
+        <p class="yes-note">Illustrative example based on common findings, not a real client.</p>
         <div class="license-note">
           <strong>Works best with Microsoft 365 Business Premium.</strong>
           Registration and sign-in evidence need Entra ID P1, which Business Premium includes. Without it, Pulse reports what it can verify and marks the rest &ldquo;not assessable,&rdquo; never as a fail.
@@ -106,7 +114,7 @@
         <p class="modules-intro">Every report includes the likely underwriter subjectivities: what a carrier may ask the business to fix or confirm before offering terms. Each version shows what that means for the person reading it.</p>
         <table class="reader-table">
           <tbody>
-            <tr><th scope="row"><span class="aud-pill">MSP</span></th><td>A fix list your team can act on, and a renewal evidence pack for each client.</td></tr>
+            <tr><th scope="row"><span class="aud-pill">MSP</span></th><td>A fix list your engineers can work through for each client, and a renewal evidence pack to hand each client before their policy renews.</td></tr>
             <tr><th scope="row"><span class="aud-pill">Broker</span></th><td>What could slow or block the placement, and what to fix before you submit.</td></tr>
             <tr><th scope="row"><span class="aud-pill">Organization</span></th><td>What to fix to get or keep coverage, before a wrong &ldquo;Yes&rdquo; reduces or voids a claim.</td></tr>
             <tr><th scope="row"><span class="aud-pill">Underwriter</span></th><td>Conditions to attach before binding, backed by evidence instead of a checkbox.</td></tr>
