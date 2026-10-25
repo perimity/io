@@ -188,7 +188,7 @@ button { font: inherit; }
   color: var(--color-ink);
 }
 
-.brand-mark { height: 1.6rem; width: auto; }
+.brand-mark { height: 1.3rem; width: auto; }
 
 .brand-name {
   font-family: var(--font-display);
@@ -517,7 +517,7 @@ section:not(.hero) + section:not(.hero) {
   gap: 0.65rem;
 }
 
-.footer-brand .brand-mark { height: 1.5rem; margin-top: 0.15rem; }
+.footer-brand .brand-mark { height: 1.1rem; margin-top: 0.3rem; }
 
 .footer-name {
   font-family: var(--font-display);
@@ -784,3 +784,11 @@ section:not(.hero) + section:not(.hero) {
 .chk-q { display: block; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-purple-deep); margin-bottom: 0.3rem; }
 .chk-name { display: block; font-weight: 600; color: var(--color-ink); font-size: 1.02rem; }
 .checks-table { margin-top: var(--space-4); }
+
+/* Two field quotes */
+.quote-wrap-two { max-width: var(--wrap-width); }
+.field-quotes { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); margin-top: var(--space-2); text-align: left; }
+.field-quote { margin: 0; padding-left: var(--space-3); border-left: 2px solid var(--color-purple-light); }
+.field-quotes .pull-quote { font-size: clamp(1.15rem, 1rem + 0.6vw, 1.4rem); }
+.field-quotes .quote-attribution { margin-top: var(--space-2); }
+@media (max-width: 760px) { .field-quotes { grid-template-columns: 1fr; } }
