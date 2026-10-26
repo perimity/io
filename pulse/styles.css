@@ -792,3 +792,13 @@ section:not(.hero) + section:not(.hero) {
 .field-quotes .pull-quote { font-size: clamp(1.15rem, 1rem + 0.6vw, 1.4rem); }
 .field-quotes .quote-attribution { margin-top: var(--space-2); }
 @media (max-width: 760px) { .field-quotes { grid-template-columns: 1fr; } }
+
+/* Four-column checks table */
+.checks-table .yes-table tbody th { width: 20%; }
+.checks-table .yes-table td { width: 30%; }
+.checks-table .yes-table td.yes-find { width: 22%; }
+.checks-table .yes-table td.ins-impact { width: auto; color: var(--color-purple-deep); }
+@media (max-width: 720px) {
+  .checks-table .yes-table td.ins-impact { background: var(--color-purple-wash); border-radius: 8px; padding: 0.7rem 0.8rem; }
+  .checks-table .yes-table td.ins-impact::before { color: var(--color-purple-deep); }
+}
