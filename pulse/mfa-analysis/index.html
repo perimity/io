@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MFA Analysis — Pulse by Perimity</title>
-  <meta name="description" content="Pulse MFA Analysis: the MFA analysis insurers ask for after a breach, before it. Read-only from Microsoft 365: registration, enforcement, named exclusions, admin access and real sign-ins.">
+  <meta name="description" content="Pulse MFA Analysis: the MFA analysis insurers ask for after a breach, before it. Read-only from Microsoft 365: registration, enforcement, named exclusions, privileged access, third-party access and real sign-ins.">
 
   <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
 
@@ -58,7 +58,7 @@
     <section class="modules" id="what-it-checks">
       <div class="wrap">
         <p class="eyebrow">What it checks</p>
-        <h2 class="section-title">Six questions behind one &ldquo;Yes.&rdquo;</h2>
+        <h2 class="section-title">Seven questions behind one &ldquo;Yes.&rdquo;</h2>
         <p class="modules-intro">The application asks whether MFA is enforced. MFA Analysis answers the questions an insurer would ask after a claim.</p>
         <div class="yes-table-wrap checks-table">
           <table class="yes-table">
@@ -82,7 +82,7 @@
               <td data-label="Example finding" class="yes-find">3 accounts excluded, including an admin.</td>
             </tr>
             <tr>
-              <th scope="row"><span class="chk-q">Are admins protected?</span><span class="chk-name">Admin access</span></th>
+              <th scope="row"><span class="chk-q">Are admins protected?</span><span class="chk-name">Privileged access</span></th>
               <td data-label="What Pulse verifies">How many Global Admins there are, whether each is covered, and with what method.</td>
               <td data-label="Example finding" class="yes-find">9 permanent Global Admins, 2 using text-message codes.</td>
             </tr>
@@ -95,6 +95,11 @@
               <th scope="row"><span class="chk-q">Is there a way around it?</span><span class="chk-name">Legacy sign-in</span></th>
               <td data-label="What Pulse verifies">Whether old protocols that skip MFA are blocked, and whether anyone still uses them.</td>
               <td data-label="Example finding" class="yes-find">Legacy sign-in allowed; 1 mailbox still uses it.</td>
+            </tr>
+                        <tr>
+              <th scope="row"><span class="chk-q">Who outside the company can get in?</span><span class="chk-name">Third-party access</span></th>
+              <td data-label="What Pulse verifies">Whether guests and vendor accounts are covered by MFA, whether the tenant trusts other companies' MFA, and which apps hold standing access that never uses MFA.</td>
+              <td data-label="Example finding" class="yes-find">A vendor guest account with no MFA; 2 apps can read every mailbox.</td>
             </tr>
             </tbody>
           </table>
