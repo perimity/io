@@ -39,7 +39,7 @@
 
     <section class="hero" id="top">
       <div class="wrap hero-inner">
-        <p class="eyebrow"><a href="../" style="color:inherit;text-decoration:none">Pulse</a> &middot; MFA Analysis &middot; Live</p>
+        <p class="eyebrow"><a href="../" style="color:inherit;text-decoration:none">Pulse</a> &middot; MFA Analysis for cyber insurance &middot; Live</p>
         <h1 class="hero-title">
           The MFA analysis insurers ask for after a breach. <em>Before</em> it.
         </h1>
@@ -59,47 +59,54 @@
       <div class="wrap">
         <p class="eyebrow">What it checks</p>
         <h2 class="section-title">Seven questions behind one &ldquo;Yes.&rdquo;</h2>
-        <p class="modules-intro">The application asks whether MFA is enforced. MFA Analysis answers the questions an insurer would ask after a claim.</p>
+        <p class="modules-intro">The application asks whether MFA is enforced. MFA Analysis answers the questions an underwriter would ask before binding, and a claims team would ask after an incident.</p>
         <div class="yes-table-wrap checks-table">
           <table class="yes-table">
             <thead>
-              <tr><th scope="col">The question</th><th scope="col">What Pulse verifies</th><th scope="col">Example finding</th></tr>
+              <tr><th scope="col">The question</th><th scope="col">What Pulse verifies</th><th scope="col">Verified answer</th><th scope="col">Insurance impact</th></tr>
             </thead>
             <tbody>
             <tr>
               <th scope="row"><span class="chk-q">Is everyone enrolled?</span><span class="chk-name">Registration</span></th>
               <td data-label="What Pulse verifies">Which users have MFA set up, and which methods they use, from phishing-resistant keys to text messages.</td>
-              <td data-label="Example finding" class="yes-find">4 of 25 users have no MFA method registered.</td>
+              <td data-label="Verified answer" class="yes-find">4 of 25 users have no MFA method registered.</td>
+              <td data-label="Insurance impact" class="ins-impact">Likely subjectivity: enroll the remaining users before binding.</td>
             </tr>
             <tr>
               <th scope="row"><span class="chk-q">Is it actually required?</span><span class="chk-name">Enforcement</span></th>
               <td data-label="What Pulse verifies">Whether a policy requires MFA for each user, or whether it only exists on paper.</td>
-              <td data-label="Example finding" class="yes-find">MFA policy is in report-only mode, so it is not enforced.</td>
+              <td data-label="Verified answer" class="yes-find">MFA policy is in report-only mode, so it is not enforced.</td>
+              <td data-label="Insurance impact" class="ins-impact">A &ldquo;Yes&rdquo; on the application would be inaccurate, a misrepresentation risk at claim time.</td>
             </tr>
             <tr>
               <th scope="row"><span class="chk-q">Who is left out?</span><span class="chk-name">Named exclusions</span></th>
               <td data-label="What Pulse verifies">Every account excluded from MFA, by name, and the policy that excludes it.</td>
-              <td data-label="Example finding" class="yes-find">3 accounts excluded, including an admin.</td>
+              <td data-label="Verified answer" class="yes-find">3 accounts excluded, including an admin.</td>
+              <td data-label="Insurance impact" class="ins-impact">Likely subjectivity: list each exclusion and explain why it is needed.</td>
             </tr>
             <tr>
               <th scope="row"><span class="chk-q">Are admins protected?</span><span class="chk-name">Privileged access</span></th>
               <td data-label="What Pulse verifies">How many Global Admins there are, whether each is covered, and with what method.</td>
-              <td data-label="Example finding" class="yes-find">9 permanent Global Admins, 2 using text-message codes.</td>
+              <td data-label="Verified answer" class="yes-find">9 permanent Global Admins, 2 using text-message codes.</td>
+              <td data-label="Insurance impact" class="ins-impact">Admin MFA is a common condition of coverage; text-message codes may be questioned.</td>
             </tr>
             <tr>
               <th scope="row"><span class="chk-q">Did MFA really happen?</span><span class="chk-name">Real sign-ins</span></th>
               <td data-label="What Pulse verifies">Who signed in with a password alone in the last 30 days, not just what the settings say.</td>
-              <td data-label="Example finding" class="yes-find">6 users signed in with a password alone last month.</td>
+              <td data-label="Verified answer" class="yes-find">6 users signed in with a password alone last month.</td>
+              <td data-label="Insurance impact" class="ins-impact">Shows MFA happened in practice, the first thing checked after an incident.</td>
             </tr>
             <tr>
               <th scope="row"><span class="chk-q">Is there a way around it?</span><span class="chk-name">Legacy sign-in</span></th>
               <td data-label="What Pulse verifies">Whether old protocols that skip MFA are blocked, and whether anyone still uses them.</td>
-              <td data-label="Example finding" class="yes-find">Legacy sign-in allowed; 1 mailbox still uses it.</td>
+              <td data-label="Verified answer" class="yes-find">Legacy sign-in allowed; 1 mailbox still uses it.</td>
+              <td data-label="Insurance impact" class="ins-impact">A way around MFA that can undermine a &ldquo;Yes&rdquo; when a claim is reviewed.</td>
             </tr>
                         <tr>
               <th scope="row"><span class="chk-q">Who outside the company can get in?</span><span class="chk-name">Third-party access</span></th>
               <td data-label="What Pulse verifies">Whether guests and vendor accounts are covered by MFA, whether the tenant trusts other companies' MFA, and which apps hold standing access that never uses MFA.</td>
-              <td data-label="Example finding" class="yes-find">A vendor guest account with no MFA; 2 apps can read every mailbox.</td>
+              <td data-label="Verified answer" class="yes-find">A vendor guest account with no MFA; 2 apps can read every mailbox.</td>
+              <td data-label="Insurance impact" class="ins-impact">Vendor and app access is a common breach path underwriters ask about.</td>
             </tr>
             </tbody>
           </table>
