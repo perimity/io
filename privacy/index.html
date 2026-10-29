@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy statement — Perimity</title>
+  <meta name="description" content="How Perimity and Pulse collect, use and protect information.">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#faf9fc;--ink:#14121a;--soft:#5b5566;--deep:#6731a3;--line:#e4e0ea}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}
+    header,main,footer{max-width:760px;margin:0 auto;padding:0 16px}
+    header{display:flex;align-items:center;justify-content:space-between;padding-top:22px;padding-bottom:22px;border-bottom:1px solid var(--line);max-width:none}
+    .bar{max-width:760px;margin:0 auto;width:100%;display:flex;justify-content:space-between;align-items:center}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:Fraunces,Georgia,serif;font-weight:600;font-size:1.15rem}
+    .brand img{height:20px}
+    nav a{color:var(--soft);text-decoration:none;margin-left:18px;font-size:.95rem} nav a:hover{color:var(--deep)}
+    h1{font-family:Fraunces,Georgia,serif;font-weight:300;font-size:clamp(2rem,1.6rem + 2vw,2.8rem);line-height:1.15;margin:48px 0 8px}
+    .meta{color:var(--soft);font-size:.92rem;margin-bottom:28px}
+    h2{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:1.3rem;margin:36px 0 8px}
+    p,li{font-size:1rem} ul{padding-left:1.2rem} li{margin:.3rem 0}
+    a{color:var(--deep)}
+    .note{background:#f1ecf7;border-left:3px solid #a484c7;padding:14px 18px;border-radius:0 10px 10px 0;margin:24px 0}
+    footer{margin-top:56px;padding-top:20px;padding-bottom:40px;border-top:1px solid var(--line);color:var(--soft);font-size:.88rem}
+  </style>
+</head>
+<body>
+  <header><div class="bar">
+    <a class="brand" href="../"><img src="../assets/perimity-mark.svg" alt="" width="48" height="20">Perimity</a>
+    <nav><a href="../pulse/mfa-analysis/">Pulse</a><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a></nav>
+  </div></header>
+  <main>
+    <h1>Privacy statement</h1>
+    <p class="meta">Effective October 29, 2026 &middot; Perimity, LLC</p>
+    <p>This statement explains what Perimity, LLC ("Perimity", "we") collects through perimity.io and through Pulse, our read-only Microsoft 365 analysis service at pulse.perimity.io, and how we use it.</p>
+
+    <h2>The short version</h2>
+    <ul>
+      <li>Pulse reads your Microsoft 365 configuration and sign-in activity with read-only permissions. It never changes a setting.</li>
+      <li>We store as little as we can: your organization's identifiers, consent details, and the results and named findings of your reports. We do not store Microsoft access tokens or raw sign-in records.</li>
+      <li>We do not sell personal information, show ads, or use third-party tracking.</li>
+      <li>You can remove Pulse's access at any time from Microsoft Entra, and ask us to delete what we hold.</li>
+    </ul>
+
+    <h2>Information from our website</h2>
+    <ul>
+      <li><strong>Walkthrough requests.</strong> If you submit your work email on perimity.io, we store it in a Google Sheet we control and use it only to contact you about Pulse.</li>
+      <li><strong>Hosting logs.</strong> Our website host keeps standard request logs, which include IP addresses and the pages requested.</li>
+    </ul>
+
+    <h2>Information Pulse processes</h2>
+    <p><strong>When you sign in.</strong> Pulse uses Microsoft Entra ID to sign you in. It receives your name, email address, your Microsoft directory IDs (tenant ID and user object ID), and your organization's name and default domain. Your session is kept in a cookie in your browser.</p>
+    <p><strong>When an administrator connects your organization.</strong> A Microsoft 365 administrator grants Pulse read-only permissions. Pulse then reads security configuration such as Conditional Access policies, authentication method settings and registration details, directory role assignments, group membership needed to resolve policy scope, license information, cross-tenant access settings, application permissions, and sign-in activity. The current list of permissions is shown in the app on the "What Pulse reads" page.</p>
+    <p><strong>What Pulse stores.</strong></p>
+    <ul>
+      <li>Your Microsoft tenant ID, organization name and default domain, whether access was granted, when and by which administrator (directory ID), and when your report was last run.</li>
+      <li>For sign-in scans: totals for the last 30 days and the accounts named in findings (for example, the name and sign-in name of an account that signed in with a password alone, and how many times). Pulse does not store the sign-in records themselves. Only the latest scan is kept.</li>
+      <li>For shared reports: a copy of the report as shown, your organization's name, a report ID and the dates involved. Account names are replaced with placeholders such as "Admin account 1" unless you choose to include them. For each share link we keep a one-way hash of the link, who created it, any label, its expiry and revocation dates, and how many times it was opened. We do not record who opened a link.</li>
+    </ul>
+    <p>Report contents are generally read live from Microsoft when you open them, except for stored sign-in scan results and shared copies.</p>
+
+    <h2>How we use information</h2>
+    <ul>
+      <li>To provide Pulse: sign you in, read your configuration, produce and display reports, and run sign-in scans.</li>
+      <li>To share reports with the people you choose.</li>
+      <li>To operate, secure and improve the service, and to contact you about it.</li>
+      <li>To comply with law.</li>
+    </ul>
+    <p>We do not use your organization's data to train AI models, and we do not sell or rent personal information.</p>
+
+    <h2>Who we share it with</h2>
+    <p>We use a small number of service providers to run Pulse and our website, under their own security and privacy commitments:</p>
+    <ul>
+      <li>Microsoft (sign-in and the Microsoft Graph API)</li>
+      <li>Vercel (application hosting)</li>
+      <li>Supabase (database)</li>
+      <li>GitHub (website hosting)</li>
+      <li>Google (the Sheet that stores walkthrough requests)</li>
+    </ul>
+    <p>Reports are shared only with people you or your administrator choose to share them with. We may disclose information if required by law or to protect the security of the service.</p>
+
+    <h2>How long we keep it</h2>
+    <ul>
+      <li>Shared report copies are deleted 30 days after their link expires or is revoked.</li>
+      <li>Only the latest sign-in scan is kept.</li>
+      <li>Organization and consent records are kept while your organization uses Pulse, and deleted on request.</li>
+    </ul>
+
+    <h2>Security</h2>
+    <p>Pulse uses least-privilege, read-only Microsoft permissions, encrypts data in transit, does not keep Microsoft access tokens, and stores share links only as one-way hashes. No system is perfectly secure; contact us right away if you believe your information has been compromised.</p>
+
+    <h2>Your choices</h2>
+    <ul>
+      <li><strong>Remove access:</strong> in the Microsoft Entra admin center, go to Entra ID &gt; Enterprise apps &gt; All applications, open Pulse, then Properties &gt; Delete. Pulse can no longer read your tenant within about an hour.</li>
+      <li><strong>Revoke shares:</strong> revoke any share link from within Pulse.</li>
+      <li><strong>Delete your data:</strong> email us to delete what Pulse stores about your organization. Removing access alone does not delete stored data.</li>
+      <li>Depending on where you live, you may have rights to access, correct or delete your personal information. Email us and we will respond.</li>
+    </ul>
+
+    <h2>Where data is processed</h2>
+    <p>Perimity is based in the United States, and our service providers may process data in the United States and other countries.</p>
+
+    <h2>Children</h2>
+    <p>Pulse is a business service and is not directed to children.</p>
+
+    <h2>Changes</h2>
+    <p>We will update this statement as Pulse changes and note the effective date at the top. Material changes will be highlighted in the app.</p>
+
+    <h2>Contact</h2>
+    <p>Perimity, LLC &middot; <a href="mailto:cjacobs@perimity.io">cjacobs@perimity.io</a></p>
+  </main>
+  <footer>&copy; 2026 Perimity, LLC &middot; <a href="../privacy/">Privacy</a> &middot; <a href="../terms/">Terms</a></footer>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of service — Perimity</title>
+  <meta name="description" content="Terms of service for Pulse by Perimity.">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#faf9fc;--ink:#14121a;--soft:#5b5566;--deep:#6731a3;--line:#e4e0ea}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}
+    header,main,footer{max-width:760px;margin:0 auto;padding:0 16px}
+    header{display:flex;align-items:center;justify-content:space-between;padding-top:22px;padding-bottom:22px;border-bottom:1px solid var(--line);max-width:none}
+    .bar{max-width:760px;margin:0 auto;width:100%;display:flex;justify-content:space-between;align-items:center}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:Fraunces,Georgia,serif;font-weight:600;font-size:1.15rem}
+    .brand img{height:20px}
+    nav a{color:var(--soft);text-decoration:none;margin-left:18px;font-size:.95rem} nav a:hover{color:var(--deep)}
+    h1{font-family:Fraunces,Georgia,serif;font-weight:300;font-size:clamp(2rem,1.6rem + 2vw,2.8rem);line-height:1.15;margin:48px 0 8px}
+    .meta{color:var(--soft);font-size:.92rem;margin-bottom:28px}
+    h2{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:1.3rem;margin:36px 0 8px}
+    p,li{font-size:1rem} ul{padding-left:1.2rem} li{margin:.3rem 0}
+    a{color:var(--deep)}
+    .note{background:#f1ecf7;border-left:3px solid #a484c7;padding:14px 18px;border-radius:0 10px 10px 0;margin:24px 0}
+    footer{margin-top:56px;padding-top:20px;padding-bottom:40px;border-top:1px solid var(--line);color:var(--soft);font-size:.88rem}
+  </style>
+</head>
+<body>
+  <header><div class="bar">
+    <a class="brand" href="../"><img src="../assets/perimity-mark.svg" alt="" width="48" height="20">Perimity</a>
+    <nav><a href="../pulse/mfa-analysis/">Pulse</a><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a></nav>
+  </div></header>
+  <main>
+    <h1>Terms of service</h1>
+    <p class="meta">Effective October 29, 2026 &middot; Perimity, LLC</p>
+    <p>These terms govern your use of Pulse, a read-only Microsoft 365 analysis service provided by Perimity, LLC ("Perimity", "we") at pulse.perimity.io, and the website perimity.io. By signing in to or connecting Pulse, you agree to these terms on behalf of yourself and the organization you represent.</p>
+
+    <div class="note">Pulse is in early access. Features change often, and some evidence comes from Microsoft preview (beta) APIs.</div>
+
+    <h2>1. What Pulse does</h2>
+    <p>Pulse reads security configuration and sign-in activity from a Microsoft 365 organization using read-only permissions, and produces reports about multi-factor authentication and related controls, framed for cyber insurance. Pulse never changes settings in your organization.</p>
+
+    <h2>2. Your authority</h2>
+    <ul>
+      <li>Only connect an organization you are authorized to act for. The administrator who grants consent confirms they have authority to let Pulse read that organization's data.</li>
+      <li>MSPs and other service providers connecting a client's organization confirm they have the client's permission.</li>
+      <li>You are responsible for who you share reports with.</li>
+    </ul>
+
+    <h2>3. Not insurance, legal or security advice</h2>
+    <p>Pulse reports what it can verify in Microsoft 365 at the time shown. It is not insurance advice, a coverage determination, a pricing recommendation, a legal opinion, or a complete security assessment. Answers on any insurance application remain the applicant's responsibility. Insurers make their own underwriting and claims decisions.</p>
+
+    <h2>4. Accuracy and limits</h2>
+    <ul>
+      <li>Results depend on data Microsoft returns, your licenses (some evidence requires Microsoft Entra ID P1 or P2), and the permissions granted.</li>
+      <li>Some controls cannot be seen through Microsoft 365, such as MFA enforced inside another provider, VPNs and remote desktop that do not sign in through Microsoft Entra. Reports list these as not verified.</li>
+      <li>Findings reflect a point in time and can change as your configuration changes.</li>
+    </ul>
+
+    <h2>5. Acceptable use</h2>
+    <p>Do not use Pulse to access an organization you are not authorized to analyze, attempt to break or bypass its security, resell or misrepresent its reports, or use it in violation of law.</p>
+
+    <h2>6. Your data</h2>
+    <p>Your organization's data remains yours. We process it to provide Pulse as described in our <a href="../privacy/">privacy statement</a>. You can remove Pulse's access at any time from Microsoft Entra and ask us to delete stored data.</p>
+
+    <h2>7. Our property</h2>
+    <p>Pulse, its software, scoring and report formats belong to Perimity. You may use reports for your own business purposes, including sharing them with your brokers, insurers and advisors.</p>
+
+    <h2>8. Fees</h2>
+    <p>Any fees will be agreed separately in writing. Early-access use may be offered free of charge and may change with notice.</p>
+
+    <h2>9. Disclaimers</h2>
+    <p>Pulse is provided "as is" and "as available". To the fullest extent permitted by law, Perimity disclaims all warranties, express or implied, including fitness for a particular purpose, accuracy and non-infringement.</p>
+
+    <h2>10. Limitation of liability</h2>
+    <p>To the fullest extent permitted by law, Perimity is not liable for indirect, incidental, special, consequential or punitive damages, or for lost profits, data, coverage or claims, arising from your use of Pulse. Our total liability for any claim relating to Pulse is limited to the amount you paid us for Pulse in the 12 months before the claim, or US $100 if you paid nothing.</p>
+
+    <h2>11. Ending use</h2>
+    <p>You can stop using Pulse at any time by removing its access in Microsoft Entra. We may suspend or end access if these terms are breached or to protect the service.</p>
+
+    <h2>12. Changes</h2>
+    <p>We may update these terms. We will note the effective date at the top, and continued use after an update means you accept it.</p>
+
+    <h2>13. Governing law</h2>
+    <p>These terms are governed by the laws of the State of Maryland, without regard to its conflict-of-laws rules.</p>
+
+    <h2>14. Contact</h2>
+    <p>Perimity, LLC &middot; <a href="mailto:cjacobs@perimity.io">cjacobs@perimity.io</a></p>
+  </main>
+  <footer>&copy; 2026 Perimity, LLC &middot; <a href="../privacy/">Privacy</a> &middot; <a href="../terms/">Terms</a></footer>
+</body>
+</html>
