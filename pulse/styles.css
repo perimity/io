@@ -497,6 +497,21 @@ section:not(.hero) + section:not(.hero) {
   padding: 0.85em 0;
 }
 
+
+/* Applicant request (underwriters and MGAs) */
+
+.request-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); align-items: start; }
+.request-note { margin-top: var(--space-3); font-size: 0.9rem; color: var(--color-ink-soft); border-left: 3px solid var(--color-purple-light); padding-left: var(--space-2); }
+.request-form { display: grid; gap: var(--space-2); background: var(--color-surface); border: 1px solid var(--color-line); border-radius: var(--radius); box-shadow: var(--shadow-card); padding: var(--space-4); }
+.request-form label { display: grid; gap: 0.35rem; font-size: 0.85rem; font-weight: 600; color: var(--color-ink); }
+.request-form label i { font-style: normal; font-weight: 400; color: var(--color-ink-soft); }
+.request-form input, .request-form textarea { width: 100%; padding: 0.75em 0.9em; border: 1px solid var(--color-line); border-radius: 8px; background: var(--color-bg); color: var(--color-ink); font-family: var(--font-body); font-size: 0.95rem; font-weight: 400; resize: vertical; }
+.request-form input:focus-visible, .request-form textarea:focus-visible { outline: 2px solid var(--color-purple-deep); outline-offset: 1px; }
+.request-form .btn { justify-self: start; margin-top: var(--space-1); }
+.request-fine { font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-ink-soft); }
+.request-success { font-weight: 600; color: var(--color-ink); }
+@media (max-width: 820px) { .request-inner { grid-template-columns: 1fr; gap: var(--space-4); } .request-form { padding: var(--space-3); } }
+
 /* -------------------------------- Footer ------------------------------------ */
 
 .site-footer {

@@ -86,9 +86,46 @@
     });
   }
 
+
+  /**
+   * Applicant request form (underwriters and MGAs). Posts to the same
+   * Apps Script endpoint as the walkthrough form, tagged type "applicant_request".
+   * The Apps Script must store the extra fields (name, company, applicant,
+   * applicantContact, notes); otherwise only the email is kept.
+   */
+  function initRequestForm() {
+    const form = document.getElementById("request-form");
+    if (!form) return;
+    const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbxPaRBngzyd_WYvNpyAbi_6Jmj42ZfncwoY7aNBVPfZcnuPImHNv-TINB_L-6Do1G4AUA/exec";
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const f = form.elements;
+      const payload = {
+        type: "applicant_request",
+        name: f.name.value.trim(),
+        email: f.email.value.trim(),
+        company: f.company.value.trim(),
+        applicant: f.applicant.value.trim(),
+        applicantContact: f.applicantContact.value.trim(),
+        notes: f.notes.value.trim(),
+      };
+      const btn = form.querySelector("button[type=submit]");
+      btn.disabled = true;
+      btn.textContent = "Sending…";
+
+      fetch(SHEET_ENDPOINT, { method: "POST", mode: "no-cors", body: JSON.stringify(payload) })
+        .catch((err) => console.error("Pulse applicant request: submission failed", err))
+        .finally(() => {
+          form.innerHTML = '<p class="request-success">Thanks. We\'ll contact ' + (payload.applicant ? payload.applicant.replace(/[<>&"]/g, "") : "the applicant") + ' and send you the report when it\'s ready.</p>';
+        });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     setFooterYear();
     initScrollReveal();
     initAccessForm();
+    initRequestForm();
   });
 })();
