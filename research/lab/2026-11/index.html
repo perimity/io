@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>This month in the Perimity Lab: November 2026 | Perimity Research</title>
+<meta name="description" content="A Conditional Access policy to block legacy authentication was in report-only mode. Turning it on moved our test company from 47 (Weak) to 53 (Mixed).">
+<link rel="canonical" href="https://perimity.io/research/lab/2026-11/">
+<meta property="og:title" content="This month in the Perimity Lab: November 2026 | Perimity Research">
+<meta property="og:description" content="A Conditional Access policy to block legacy authentication was in report-only mode. Turning it on moved our test company from 47 (Weak) to 53 (Mixed).">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://perimity.io/research/lab/2026-11/">
+<link rel="icon" type="image/svg+xml" href="../../../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../research/research.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "The policy existed. Nothing was blocked.",
+ "datePublished": "2026-11-08",
+ "author": {
+  "@type": "Organization",
+  "name": "Perimity, LLC",
+  "url": "https://perimity.io/",
+  "description": "Perimity builds Pulse, which reads MFA evidence directly from a company's Microsoft 365 so cyber insurance underwriters, brokers and MSPs can see what “Yes” on the application actually means."
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "Perimity, LLC",
+  "url": "https://perimity.io/",
+  "description": "Perimity builds Pulse, which reads MFA evidence directly from a company's Microsoft 365 so cyber insurance underwriters, brokers and MSPs can see what “Yes” on the application actually means."
+ },
+ "mainEntityOfPage": "https://perimity.io/research/lab/2026-11/"
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="bar">
+<a class="brand" href="../../../"><img src="../../../assets/perimity-mark.svg" alt="" width="48" height="20">Perimity</a>
+<nav class="top" aria-label="Primary"><a href="../../../research/">Research</a><a href="../../../pulse/mfa-analysis/">Pulse</a></nav>
+</div></header>
+<main id="main">
+<p class="eyebrow">This month in the Perimity Lab &middot; November 2026</p>
+<h1>The policy <em>existed</em>. Nothing was blocked.</h1>
+<p class="meta">Published November 8, 2026 &middot; Perimity</p>
+<p class="lede">The Perimity Lab is our test Microsoft 365 company, set up with deliberate gaps. Each month we change one thing and record what the evidence shows.</p>
+<h2>What we changed</h2>
+<p>The lab had a Conditional Access policy to block legacy authentication, the older sign-in protocols that can bypass MFA. The policy was set to <b>report-only</b>. In that mode, Microsoft logs what the policy <i>would</i> have blocked, but blocks nothing.</p>
+<p>We switched the policy to <b>On</b> and ran Pulse again.</p>
+<div class="ba">
+<div><p class="lbl">Before &middot; report-only</p><p class="score">47</p><p><b>Weak</b> &middot; Legacy authentication: Fail</p></div>
+<div class="after"><p class="lbl">After &middot; On</p><p class="score">53</p><p><b>Mixed</b> &middot; Legacy authentication: Pass</p></div>
+</div>
+<p class="small">Scores are Pulse's MFA score out of 100, from 15 assessable checks. Switching the policy back to report-only returned the score to 47.</p>
+<h2>Why it matters</h2>
+<p>Ask &ldquo;Do you have a policy to block legacy authentication?&rdquo; and the honest answer was &ldquo;Yes.&rdquo; Ask &ldquo;Is legacy authentication blocked?&rdquo; and the answer was &ldquo;No.&rdquo; On an application, both can come back as the same checkbox.</p>
+<div class="callout"><p><b>A policy that exists isn't a policy that's enforced.</b> Report-only mode is useful for testing a policy before switching it on, which also makes it easy to leave on by mistake.</p></div>
+<p>Legacy authentication isn't asked about on any of the six public applications we reviewed (<a href="../../mfa-application-questions/">see the tally</a>). It still matters to the question that is asked: legacy sign-ins can get around &ldquo;MFA required for all users.&rdquo;</p>
+<h2>What's still open in the lab</h2>
+<ul class="plain">
+<li>2 of 4 admins excluded from MFA</li>
+<li>1 admin with no MFA method registered</li>
+<li>4 of 10 accounts signed in with a password alone in the last 30 days</li>
+<li>SMS and voice still enabled; no phishing-resistant MFA for admins</li>
+<li>1 payment approver excluded from MFA</li>
+</ul>
+<p>Next month: removing the admin exclusions, and what that does to the evidence.</p>
+<p class="small">Pulse verifies controls; the answers on an application remain the applicant's. <a href="../../../pulse/mfa-analysis/">How Pulse works</a></p>
+</main>
+<footer class="site"><div class="bar">
+<span>&copy; 2026 Perimity, LLC. Verified evidence for cyber insurance.</span>
+<nav aria-label="Footer"><a href="../../../research/">Research</a><a href="../../../pulse/mfa-analysis/">Pulse MFA Analysis</a><a href="../../../privacy/">Privacy</a><a href="../../../terms/">Terms</a></nav>
+</div></footer>
+</body>
+</html>
