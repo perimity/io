@@ -492,6 +492,19 @@ section:not(.hero) + section:not(.hero) {
   color: rgba(255, 255, 255, 0.6);
 }
 
+.cta-error {
+  margin-top: 0.6rem;
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #9b2f29;
+  background: #fbebeb;
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+}
+
+.cta-error[hidden] { display: none; }
+
 .cta-success {
   font-weight: 600;
   padding: 0.85em 0;

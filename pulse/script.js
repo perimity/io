@@ -60,10 +60,39 @@
     // Replace with the Web App URL from Deploy > New deployment in Apps Script.
     const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbxPaRBngzyd_WYvNpyAbi_6Jmj42ZfncwoY7aNBVPfZcnuPImHNv-TINB_L-6Do1G4AUA/exec";
 
+    // Work email only: personal mailbox domains are turned away with a note.
+    const PERSONAL_DOMAINS = new Set([
+      "gmail.com", "googlemail.com", "yahoo.com", "ymail.com", "rocketmail.com",
+      "hotmail.com", "outlook.com", "live.com", "msn.com", "icloud.com", "me.com",
+      "mac.com", "aol.com", "proton.me", "protonmail.com", "pm.me", "gmx.com",
+      "gmx.net", "mail.com", "yandex.com", "zoho.com", "hey.com", "fastmail.com",
+      "tutanota.com", "comcast.net", "verizon.net", "att.net", "sbcglobal.net",
+    ]);
+    const emailInput = form.elements.email;
+    const errorEl = document.createElement("p");
+    errorEl.className = "cta-error";
+    errorEl.id = "email-error";
+    errorEl.setAttribute("role", "alert");
+    errorEl.hidden = true;
+    form.after(errorEl);
+    emailInput.setAttribute("aria-describedby", "email-error");
+    emailInput.addEventListener("input", () => {
+      errorEl.hidden = true;
+      emailInput.removeAttribute("aria-invalid");
+    });
+
     form.addEventListener("submit", (event) => {
       event.preventDefault();
 
-      const email = form.elements.email.value.trim();
+      const email = emailInput.value.trim();
+      const domain = email.split("@").pop().toLowerCase();
+      if (PERSONAL_DOMAINS.has(domain) || /^(yahoo|hotmail|outlook|live)\./.test(domain)) {
+        errorEl.textContent = "Please use your work email, the one at your company's domain.";
+        errorEl.hidden = false;
+        emailInput.setAttribute("aria-invalid", "true");
+        emailInput.focus();
+        return;
+      }
       const submitBtn = form.querySelector("button[type=submit]");
       const originalLabel = submitBtn.textContent;
 
