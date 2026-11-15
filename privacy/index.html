@@ -35,15 +35,15 @@
   </div></header>
   <main>
     <h1>Privacy statement</h1>
-    <p class="meta">Effective October 29, 2026 &middot; Perimity, LLC</p>
+    <p class="meta">Effective November 15, 2026 &middot; Perimity, LLC &middot; Replaces the version of October 29, 2026</p>
     <p>This statement explains what Perimity, LLC ("Perimity", "we") collects through perimity.io and through Pulse, our read-only Microsoft 365 analysis service at pulse.perimity.io, and how we use it.</p>
 
     <h2>The short version</h2>
     <ul>
       <li>Pulse reads your Microsoft 365 configuration and sign-in activity with read-only permissions. It never changes a setting.</li>
-      <li>We store as little as we can: your organization's identifiers, consent details, and the results and named findings of your reports. We do not store Microsoft access tokens or raw sign-in records.</li>
+      <li>We store as little as we can: your organization's identifiers, consent details, report results, the accounts named in findings, and, if your organization has weekly monitoring, a dated history of results. We do not store Microsoft access tokens or raw sign-in records.</li>
       <li>We do not sell personal information, show ads, or use third-party tracking.</li>
-      <li>You can remove Pulse's access at any time from Microsoft Entra, and ask us to delete what we hold.</li>
+      <li>You can remove Pulse's access at any time from Microsoft Entra, or disconnect and delete your data from within Pulse.</li>
     </ul>
 
     <h2>Information from our website</h2>
@@ -54,18 +54,23 @@
 
     <h2>Information Pulse processes</h2>
     <p><strong>When you sign in.</strong> Pulse uses Microsoft Entra ID to sign you in. It receives your name, email address, your Microsoft directory IDs (tenant ID and user object ID), and your organization's name and default domain. Your session is kept in a cookie in your browser.</p>
-    <p><strong>When an administrator connects your organization.</strong> A Microsoft 365 administrator grants Pulse read-only permissions. Pulse then reads security configuration such as Conditional Access policies, authentication method settings and registration details, directory role assignments, group membership needed to resolve policy scope, license information, cross-tenant access settings, application permissions, and sign-in activity. The current list of permissions is shown in the app on the "What Pulse reads" page.</p>
+    <p><strong>When an administrator connects your organization.</strong> A Microsoft 365 administrator grants Pulse read-only permissions. Pulse then reads security configuration such as Conditional Access policies, authentication method settings and registration details, directory role assignments, group membership needed to resolve policy scope, license information, cross-tenant access settings, application permissions, and sign-in activity. The current list of permissions, and a detailed description of everything Pulse stores, is shown in the app on the "What Pulse reads" page.</p>
+
     <p><strong>What Pulse stores.</strong></p>
     <ul>
-      <li>Your Microsoft tenant ID, organization name and default domain, whether access was granted, when and by which administrator (directory ID), and when your report was last run.</li>
-      <li>For sign-in scans: totals for the last 30 days and the accounts named in findings (for example, the name and sign-in name of an account that signed in with a password alone, and how many times). Pulse does not store the sign-in records themselves. Only the latest scan is kept.</li>
-      <li>For shared reports: a copy of the report as shown, your organization's name, a report ID and the dates involved. Account names are replaced with placeholders such as "Admin account 1" unless you choose to include them. For each share link we keep a one-way hash of the link, who created it, any label, its expiry and revocation dates, and how many times it was opened. We do not record who opened a link.</li>
+      <li><strong>Your organization.</strong> Your Microsoft tenant ID, organization name and default domain, whether access was granted, when and by which administrator (directory ID), and when your report was last run. If you designate a payment approvers group, its ID only; its members are read when you open your report and are not stored.</li>
+      <li><strong>Recent report results.</strong> So a report can show what changed, Pulse keeps its latest result and the previous one that differed: when each was read, the score and band, and each check's result. No account, group or policy names.</li>
+      <li><strong>Sign-in scans.</strong> Pulse reads the last 30 days of sign-ins and keeps totals and the accounts its findings name (for example, the name and sign-in name of an account that signed in with a password alone, how many times, and when it last did). It keeps some per-account counts keyed by directory ID only, with no name. It does not store the sign-in records themselves. The last finished scan is kept until a new one replaces it. For each finished scan it also keeps a dated row of totals, with no names or directory IDs.</li>
+      <li><strong>Weekly monitoring</strong> (if your organization has it). Your plan and monitoring dates, and the outcome of each weekly run. Each week Pulse keeps a dated copy of your result (score, band and each check's result) and of the report as a shared copy shows it, with account names replaced by labels such as "Account 1" and no policy or group names. It also keeps a dated copy when your report changes between weekly runs. Dated copies are never changed after they are made, so they can serve as a record of what was in place on a given date.</li>
+      <li><strong>Change alerts.</strong> When a weekly result is worse than the week before, Pulse emails the administrator who connected your organization and any extra recipients set up with you, such as your MSP or broker. For this it keeps those email addresses and when the last alert was sent. Alerts contain your organization's name, counts and check names only, never account, group or policy names.</li>
+      <li><strong>Shared reports.</strong> A copy of the report as shown, your organization's name, a report ID and the dates involved. If your organization has weekly monitoring, the copy also keeps the dated results up to that day. Account names are replaced with labels such as "Admin account 1" unless you choose to include them. For each link we keep a one-way hash of the link, who created it, any label, the view it opens in, its expiry and revocation dates, and how many times it was opened. We do not record who opened a link: no IP addresses, cookies or trackers.</li>
+      <li><strong>Connection status.</strong> To notice when an organization removes Pulse, we keep how many access checks Microsoft refused and when, and, once access is lost, the date it was lost and the date your data will be deleted.</li>
     </ul>
-    <p>Report contents are generally read live from Microsoft when you open them, except for stored sign-in scan results and shared copies.</p>
 
     <h2>How we use information</h2>
     <ul>
-      <li>To provide Pulse: sign you in, read your configuration, produce and display reports, and run sign-in scans.</li>
+      <li>To provide Pulse: sign you in, read your configuration, produce and display reports, run sign-in scans, monitor changes and send change alerts.</li>
+      <li>To keep a dated record of results that your organization can share, for example with a broker or insurer at renewal or in support of a claim.</li>
       <li>To share reports with the people you choose.</li>
       <li>To operate, secure and improve the service, and to contact you about it.</li>
       <li>To comply with law.</li>
@@ -78,26 +83,30 @@
       <li>Microsoft (sign-in and the Microsoft Graph API)</li>
       <li>Vercel (application hosting)</li>
       <li>Supabase (database)</li>
+      <li>Resend (change alert emails)</li>
       <li>GitHub (website hosting)</li>
       <li>Google (the Sheet that stores walkthrough requests)</li>
     </ul>
-    <p>Reports are shared only with people you or your administrator choose to share them with. We may disclose information if required by law or to protect the security of the service.</p>
+    <p>Reports are shared only with people you or your administrator choose to share them with, and alerts go only to the recipients set up with your organization. We may disclose information if required by law or to protect the security of the service.</p>
 
     <h2>How long we keep it</h2>
     <ul>
       <li>Shared report copies are deleted 30 days after their link expires or is revoked.</li>
-      <li>Only the latest sign-in scan is kept.</li>
-      <li>Organization and consent records are kept while your organization uses Pulse, and deleted on request.</li>
+      <li>Dated sign-in scan totals are kept for 24 months.</li>
+      <li>Your organization's record, including weekly history, is kept while your organization uses Pulse.</li>
+      <li>If you choose "Disconnect and delete my data" in Pulse, everything Pulse stores about your organization is deleted at once.</li>
+      <li>If your organization removes Pulse's access in Microsoft Entra, Pulse detects it and deletes your organization's data, including weekly history, 30 days after access is lost.</li>
     </ul>
 
     <h2>Security</h2>
-    <p>Pulse uses least-privilege, read-only Microsoft permissions, encrypts data in transit, does not keep Microsoft access tokens, and stores share links only as one-way hashes. No system is perfectly secure; contact us right away if you believe your information has been compromised.</p>
+    <p>Pulse uses least-privilege, read-only Microsoft permissions, encrypts data in transit and at rest, keeps its database accessible to the server only, does not keep Microsoft access tokens, and stores share links only as one-way hashes. No system is perfectly secure; contact us right away if you believe your information has been compromised.</p>
 
     <h2>Your choices</h2>
     <ul>
-      <li><strong>Remove access:</strong> in the Microsoft Entra admin center, go to Entra ID &gt; Enterprise apps &gt; All applications, open Pulse, then Properties &gt; Delete. Pulse can no longer read your tenant within about an hour.</li>
+      <li><strong>Remove access:</strong> in the Microsoft Entra admin center, go to Entra ID &gt; Enterprise apps &gt; All applications, open Pulse, then Properties &gt; Delete. Pulse can no longer read your tenant within about an hour, and your stored data is deleted 30 days later.</li>
+      <li><strong>Delete your data now:</strong> the administrator who connected your organization can choose "Disconnect and delete my data" on Pulse's connection status page, or email us.</li>
       <li><strong>Revoke shares:</strong> revoke any share link from within Pulse.</li>
-      <li><strong>Delete your data:</strong> email us to delete what Pulse stores about your organization. Removing access alone does not delete stored data.</li>
+      <li><strong>Stop alerts:</strong> ask us to remove any alert recipient.</li>
       <li>Depending on where you live, you may have rights to access, correct or delete your personal information. Email us and we will respond.</li>
     </ul>
 
