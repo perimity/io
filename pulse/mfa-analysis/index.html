@@ -48,7 +48,8 @@
         <p class="hero-sub">
           After an incident, one of the first things an insurer asks for is an MFA analysis.
           Pulse runs it before the policy is bound, read-only from Microsoft 365, and keeps
-          running it through the term.
+          running it through the term. Outside-in scans can't see MFA; Pulse reads it inside-out,
+          from the system itself, not from someone who wants a &ldquo;Yes.&rdquo;
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#request-access">Request a walkthrough</a>
@@ -106,7 +107,7 @@
             </tr>
                         <tr>
               <th scope="row"><span class="chk-q">Who outside the company can get in?</span><span class="chk-name">Third-party access</span></th>
-              <td data-label="What Pulse verifies">Whether guests and vendor accounts are covered by MFA, whether the tenant trusts other companies' MFA, and which apps hold standing access that never uses MFA.</td>
+              <td data-label="What Pulse verifies">Whether guests and vendor accounts are covered by MFA, whether the organization trusts other companies' MFA, and which apps hold standing access that never uses MFA.</td>
               <td data-label="Verified answer" class="yes-find">A vendor guest account with no MFA; 2 apps can read every mailbox.</td>
               <td data-label="Insurance impact" class="ins-impact">Vendor and app access is a common breach path underwriters ask about.</td>
             </tr>
@@ -144,11 +145,25 @@
         <p class="modules-intro">Every report includes the likely underwriter subjectivities: what a carrier may ask the business to fix or confirm before offering terms. Each version shows what that means for the person reading it.</p>
         <table class="reader-table">
           <tbody>
-            <tr><th scope="row"><span class="aud-pill">MSP</span></th><td>A fix list your engineers can work through for each client, and a renewal evidence pack to hand each client before their policy renews.</td></tr>
+            <tr><th scope="row"><span class="aud-pill">MSP</span></th><td>Renewal Readiness: a fix list your engineers can work through for each client, and the evidence pack to hand each client before their policy renews. Your client owns the answers; you keep a dated record of what was on, what was off, and that they were told.</td></tr>
             <tr><th scope="row"><span class="aud-pill">Broker</span></th><td>What could slow or block the placement, and what to fix before you submit.</td></tr>
             <tr><th scope="row"><span class="aud-pill">Organization</span></th><td>What to fix to get or keep coverage, before a wrong &ldquo;Yes&rdquo; reduces or voids a claim.</td></tr>
-            <tr><th scope="row"><span class="aud-pill">Underwriter</span></th><td>Conditions to attach before binding, backed by evidence instead of a checkbox.</td></tr>
+            <tr><th scope="row"><span class="aud-pill">Underwriter</span></th><td>Inside-out evidence for the controls you ask about, and conditions to attach before binding, backed by evidence instead of a checkbox. Submit a Pulse Evidence Request, free.</td></tr>
             <tr><th scope="row"><span class="aud-pill">Claims</span></th><td>Whether the MFA answers on the application matched what was in place, with dated evidence from before the incident.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="audience" id="plans">
+      <div class="wrap">
+        <p class="eyebrow">Ways to get it</p>
+        <h2 class="section-title">Before bind, and after.</h2>
+        <table class="reader-table">
+          <tbody>
+            <tr><th scope="row"><span class="aud-pill">Pulse Evidence</span></th><td>One verified report for a renewal or new application, with the evidence pack to share with your broker and underwriter.</td></tr>
+            <tr><th scope="row"><span class="aud-pill">Pulse Monitoring</span></th><td>Weekly checks through the policy term, a dated history of every result, and an alert when something gets worse.</td></tr>
+            <tr><th scope="row"><span class="aud-pill">Underwriters</span></th><td>Free. Submit a Pulse Evidence Request; nothing is shared until the business approves it.</td></tr>
           </tbody>
         </table>
       </div>
@@ -157,7 +172,7 @@
     <section class="pipeline" id="how-it-works">
       <div class="wrap">
         <p class="eyebrow">How it works</p>
-        <h2 class="section-title">Minutes to connect. Nothing changes in your tenant.</h2>
+        <h2 class="section-title">Minutes to connect. Nothing changes in Microsoft 365.</h2>
         <ol class="pipeline-list">
           <li class="pipeline-step"><span class="pipeline-index">01</span><div><h3>Connect</h3><p>A Microsoft 365 admin signs in and approves read-only access. Pulse never changes a setting.</p></div></li>
           <li class="pipeline-step"><span class="pipeline-index">02</span><div><h3>Analyze</h3><p>Pulse reads MFA configuration and the last 30 days of sign-in activity, and scores each finding against CIS Controls 5 and 6.</p></div></li>
@@ -191,7 +206,7 @@
         <img class="brand-mark" src="../../assets/perimity-mark.svg" alt="" width="40" height="17">
         <div>
           <p class="footer-name">Perimity</p>
-          <p class="footer-tagline">Verified evidence for cyber insurance.</p>
+          <p class="footer-tagline">Pulse: the evidence layer for cyber insurance.</p>
         </div>
       </div>
       <nav class="footer-nav" aria-label="Footer">
