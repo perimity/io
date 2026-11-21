@@ -59,6 +59,7 @@
       first: f.first.value.trim(), last: f.last.value.trim(), email,
       company: f.company.value.trim(), title: f.title.value.trim(),
       role: f.role.value, question: f.question.value.trim(), ref,
+      updates: f.updates.checked ? "yes" : "no",
     };
 
     fetch(ENDPOINT, { method: "POST", mode: "no-cors", body: JSON.stringify(payload) })

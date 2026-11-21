@@ -8,6 +8,10 @@
  * 4. Deploy > New deployment > Web app. Execute as: Me. Who has access: Anyone.
  * 5. Copy the Web App URL into ENDPOINT in webinar/webinar.js.
  * 6. Share the Sheet with Liv as Editor (Share button). No account access needed.
+ *
+ * "Updates OK" is yes only when the registrant ticked the box. Send marketing
+ * email only to "yes" rows; every marketing email needs an unsubscribe line and
+ * Perimity's mailing address. Remove anyone who unsubscribes within 10 business days.
  */
 const SHEET_NAME = "Registrations";
 const JOIN_LINK = ""; // e.g. the Zoom or Teams link
@@ -25,7 +29,7 @@ function doPost(e) {
     const ss = SpreadsheetApp.getActiveSpreadsheet();
     const sheet = ss.getSheetByName(SHEET_NAME) || ss.insertSheet(SHEET_NAME);
     if (sheet.getLastRow() === 0) {
-      sheet.appendRow(["Registered (UTC)", "First", "Last", "Email", "Company", "Title", "Role", "Question", "Invited by", "Attended", "Notes"]);
+      sheet.appendRow(["Registered (UTC)", "First", "Last", "Email", "Company", "Title", "Role", "Question", "Invited by", "Updates OK", "Attended", "Notes"]);
     }
     // Skip duplicates by email.
     const existing = sheet.getLastRow() > 1 ? sheet.getRange(2, 4, sheet.getLastRow() - 1, 1).getValues().flat() : [];
@@ -33,7 +37,7 @@ function doPost(e) {
 
     const clean = (v) => String(v || "").replace(/^[=+\-@]/, "'").slice(0, 500); // stop spreadsheet formulas
     sheet.appendRow([new Date().toISOString(), clean(d.first), clean(d.last), email, clean(d.company),
-      clean(d.title), clean(d.role), clean(d.question), clean(d.ref), "", ""]);
+      clean(d.title), clean(d.role), clean(d.question), clean(d.ref), d.updates === "yes" ? "yes" : "no", "", ""]);
 
     const joinLine = JOIN_LINK ? "Join link: " + JOIN_LINK : "We'll email your join link the week before.";
     MailApp.sendEmail({
