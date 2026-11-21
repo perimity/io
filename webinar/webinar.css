@@ -1,0 +1,23 @@
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:24px 0}
+.facts div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.facts span{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+.facts b{font-size:16px}
+ul.see{padding-left:20px}ul.see li{margin:6px 0}
+.people{display:flex;flex-wrap:wrap;gap:24px;margin:16px 0}
+.people p{margin:0;border-left:3px solid var(--purple-light);padding-left:12px}
+.people i{display:block;font-style:normal;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+form.reg{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0 8px}
+form.reg .full{grid-column:1/-1}
+form.reg label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600}
+form.reg input,form.reg select,form.reg textarea{font:inherit;font-weight:400;font-size:16px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);min-height:44px;box-sizing:border-box;width:100%}
+form.reg input:focus,form.reg select:focus,form.reg textarea:focus{outline:2px solid var(--purple-light);outline-offset:1px}
+form.reg input[aria-invalid=true]{border-color:var(--bad)}
+form.reg button{grid-column:1/-1;justify-self:start;font:inherit;font-weight:600;font-size:16px;background:var(--purple);color:#fff;border:0;border-radius:8px;padding:12px 22px;min-height:44px;cursor:pointer}
+form.reg button:disabled{opacity:.6;cursor:default}
+.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.err{color:var(--bad);font-size:14px;margin:0}
+.done{background:var(--good-wash);border:1px solid #bfe3cd;border-radius:12px;padding:20px 24px;margin:16px 0}
+.done h3{margin:0 0 6px;font-family:var(--display);font-weight:600;font-size:22px}
+.cal{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+.cal a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid var(--line);border-radius:8px;background:#fff;text-decoration:none;font-weight:600}
+@media (max-width:640px){form.reg{grid-template-columns:1fr;padding:18px}}

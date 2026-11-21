@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Perimity//Webinar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:perimity-webinar-20270122@perimity.io
+DTSTAMP:20261117T000000Z
+DTSTART:20270122T180000Z
+DTEND:20270122T183000Z
+SUMMARY:Perimity webinar: What verified MFA evidence looks like
+DESCRIPTION:A 30-minute live session for cyber underwriting teams. The join link is emailed to registrants. Details: https://perimity.io/webinar/
+URL:https://perimity.io/webinar/
+ORGANIZER;CN=Perimity:mailto:cjacobs@perimity.io
+END:VEVENT
+END:VCALENDAR
