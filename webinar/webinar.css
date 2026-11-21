@@ -14,6 +14,8 @@ form.reg input:focus,form.reg select:focus,form.reg textarea:focus{outline:2px s
 form.reg input[aria-invalid=true]{border-color:var(--bad)}
 form.reg button{grid-column:1/-1;justify-self:start;font:inherit;font-weight:600;font-size:16px;background:var(--purple);color:#fff;border:0;border-radius:8px;padding:12px 22px;min-height:44px;cursor:pointer}
 form.reg button:disabled{opacity:.6;cursor:default}
+form.reg label.check{flex-direction:row;align-items:flex-start;gap:10px;font-weight:400;font-size:15px;line-height:1.45;cursor:pointer}
+form.reg label.check input{width:20px;height:20px;min-height:0;margin:2px 0 0;padding:0;flex:none;accent-color:var(--purple)}
 .hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
 .err{color:var(--bad);font-size:14px;margin:0}
 .done{background:var(--good-wash);border:1px solid #bfe3cd;border-radius:12px;padding:20px 24px;margin:16px 0}
