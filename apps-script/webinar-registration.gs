@@ -1,3 +1,4 @@
+/** @OnlyCurrentDoc */
 /**
  * Webinar registrations for perimity.io/webinar/
  *
