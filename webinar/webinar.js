@@ -1,6 +1,6 @@
 (() => {
   // Paste the Web App URL from Apps Script (Deploy > New deployment) here.
-  const ENDPOINT = "PASTE_APPS_SCRIPT_URL_HERE";
+  const ENDPOINT = "https://script.google.com/macros/s/AKfycbyKu2rnImVHjlRDkI4yf00t6PKOaV9eZ46OBjHvtDixg64e3dW0Aw-8OLNILYt-pA_arw/exec";
 
   // Keep in sync with pulse/script.js and Pulse (src/lib/personal-domains.ts).
   const PERSONAL_DOMAINS = new Set([
