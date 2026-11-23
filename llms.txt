@@ -1,0 +1,23 @@
+# Perimity
+
+> Perimity builds Pulse, the evidence layer for cyber insurance. Pulse reads security controls directly from a company's Microsoft 365, starting with MFA, so underwriters, brokers and MSPs can see what a "Yes" on a cyber insurance application actually means, before bind and during the policy. Access is read-only and approved by the company's own Microsoft 365 admin.
+
+## Products
+- [Pulse](https://perimity.io/pulse/mfa-analysis/): Pulse Evidence (a one-time, dated evidence pack read from Microsoft 365), Pulse Monitoring (a weekly re-check that flags changes, such as a new MFA exclusion), and the Pulse Evidence Request (free for underwriters: ask an applicant for an evidence pack; nothing is shared until the applicant approves).
+- [Pulse Subjectivity Tracker](https://perimity.io/tracker/): every open carrier subjectivity in one list, for cyber brokers.
+
+## Research
+- [What cyber insurance applications actually ask about MFA](https://perimity.io/research/mfa-application-questions/)
+- [This month in the Perimity Lab](https://perimity.io/research/lab/2026-11/): changes made in Perimity's own test company, with before and after scores.
+- [All research](https://perimity.io/research/)
+
+## Events
+- [Webinar, January 22, 2027: What verified MFA evidence looks like](https://perimity.io/webinar/): a free 30-minute session for heads of cyber underwriting and their teams.
+
+## Policies
+- [Privacy statement](https://perimity.io/privacy/)
+- [Terms of service](https://perimity.io/terms/)
+
+## Key points
+- Pulse verifies controls; the answers on the application remain the applicant's. Pulse does not attest.
+- Outside-in scans show the perimeter. Pulse shows the inside: verified controls, read from Microsoft 365.
